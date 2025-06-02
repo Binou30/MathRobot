@@ -1,246 +1,246 @@
-import math #importer les maths
-import time #importer le temps
-import os #importer le contrôle du terminal
+import math #import math library
+import time #import time library
+import os #import terminal control library
 
-def pythagore(): #définir PythRobot
-    print("Je suis PythRobot, j'éxécute le théorème de Pythagore")
+def pythagore(): #défine PythRobot
+    print("JI am PythRobot, I execute the Pythagorean theorem")
     time.sleep(0.5)
-    print("Je précise que nous travaillons dans un triangle ABC et que chaque côté sera exprimé en MAJUSCULES")
+    print("I would like to point out that we are working in a triangle ABC and that each side will be expressed in CAPITALS.")
     time.sleep(0.5)
     while True:
-        actionpyt = input("Entre le numéro d'action que tu veux effectuer:\n1. Trouver la longueur d'un côté\n2. Trouver si un triangle est rectangle\n3. Quitter Pythrobot\n")
+        actionpyt = input("Enter the action number you want to perform:\n1. Find the length of a side\n2. Find if a triangle is right angled\n3. Quit Pythrobot\n")
         while actionpyt != "1" and actionpyt != "2" and actionpyt != "3":
-            print("Entrée incorrecte")
+            print("Incorrect entry")
             time.sleep(1.5)
-            actionpyt = input("Entre le numéro d'action que tu veux effectuer:\n1. Trouver la longueur d'un côté\n2. Trouver si un triangle est rectangle\n3. Quitter Pythrobot\n")
-        if actionpyt == "1": #lignes 17 à 218 = la fonction trouver la longueur d'un côté
-            angledroit1 = input("Entre le nom de l'angle droit (en une lettre)")
+            actionpyt = input("Enter the action number you want to perform:\n1. Find the length of a side\n2. Find if a triangle is right angled\n3. Quit Pythrobot\n")
+        if actionpyt == "1": #lines 17 to 218 = the function find the length of a side
+            angledroit1 = input("Enter the name of the right angle (in one letter)")
             while angledroit1 != "A" and angledroit1 != "B" and angledroit1 != "C":
-                print("Entrée incorrecte")
+                print("Incorrect entry")
                 time.sleep(1.5)
-                angledroit1 = input("Entre le nom de l'angle droit (en une lettre)")
+                angledroit1 = input("Enter the name of the right angle (in one letter)")
             if angledroit1 == "A":
-                longatrouver1 = input("Entre la longueur du côté à trouver")
+                longatrouver1 = input("Enter the length of the side to be found")
                 while longatrouver1 != "BC" and longatrouver1 != "AC" and longatrouver1 != "AB":
-                    print("Entrée incorrecte")
+                    print("Incorrect entry")
                     time.sleep(1.5)
-                    longatrouver1 = input("Entre la longueur du côté à trouver")
+                    longatrouver1 = input("Enter the length of the side to be found")
                 if longatrouver1 == "BC":
                     while True:
-                        entrée = input("Entre la longueur de AC")
+                        entrée = input("Enter the length of AC")
                         try:
                             AC1 = float(entrée)
                             break
                         except ValueError:
-                            print("Entrée incorrecte")
+                            print("Incorrect entry")
                             time.sleep(1.5)
                     while True:
-                        entrée = input("Entre la longueur de AB")
+                        entrée = input("Enter the length of AB")
                         try:
                             AB1 = float(entrée)
                             break
                         except ValueError:
-                            print("Entrée incorrecte")
+                            print("Incorrect entry")
                             time.sleep(1.5)
                     BC1 = math.sqrt(AC1*AC1 + AB1*AB1)
                     print("BC = ", BC1, "cm")
                 else:
                     if longatrouver1 == "AC":
                         while True:
-                            entrée = input("Entre le longueur de BC")
+                            entrée = input("Enter the length of BC")
                             try:
                                 BC2 = float(entrée)
                                 break
                             except ValueError:
-                                print("Entrée incorrecte")
+                                print("Incorrect entry")
                                 time.sleep(1.5)   
                         while True:
-                            entrée = input("Entre la longueur de AB")
+                            entrée = input("Enter the length of AB")
                             try:
                                 AB2 = float(entrée)
                                 break
                             except ValueError:
-                                print("Entrée incorrecte")
+                                print("Incorrect entry")
                                 time.sleep(1.5)
                         AC2 = math.sqrt(BC2*BC2 - AB2*AB2)
                         print("AC = ", AC2, "cm")
                     else:
                         if longatrouver1 == "AB":
                             while True:
-                                entrée = input("Entre la longueur de AC")
+                                entrée = input("Enter the length of AC")
                                 try:
                                     AC3 = float(entrée)
                                     break
                                 except ValueError:
-                                    print("Entrée incorrecte")
+                                    print("Incorrect entry")
                                     time.sleep(1.5)
                             while True:
-                                entrée = input("Entre la longueur de BC")
+                                entrée = input("Enter the length of BC")
                                 try:
                                     BC3 = float(entrée)
                                     break
                                 except ValueError:
-                                    print("Entrée incorrecte")
+                                    print("Incorrect entry")
                                     time.sleep(1.5)
                             AB3 = math.sqrt(BC3*BC3 - AC3*AC3)
                             print("AB = ", AB3, "cm")
             else:
                 if angledroit1 == "B":
-                    longatrouver2 = input('Entre la longueur du côté à trouver')
+                    longatrouver2 = input('Enter the length of the side to be found')
                     while longatrouver2 != "BC" and longatrouver2 != "AC" and longatrouver2 != "AB":
-                        print("Entrée incorrecte")
+                        print("Incorrect entry")
                         time.sleep(1.5)
-                        longatrouver2 = input("Entre la longueur du côté à trouver")
+                        longatrouver2 = input("Enter the length of the side to be found")
                     if longatrouver2 == "BC":
                         while True:
-                            entrée = input("Entre la longueur de AC")
+                            entrée = input("Enter the length of AC")
                             try:
                                 AC4 = float(entrée)
                                 break
                             except ValueError:
-                                print("Entrée incorrecte")
+                                print("Incorrect entry")
                                 time.sleep(1.5)
                         while True:
-                            entrée = input("Entre la longueur de AB")
+                            entrée = input("Enter the length of AB")
                             try:
                                 AB4 = float(entrée)
                                 break
                             except ValueError:
-                                print("Entrée incorrecte")
+                                print("Incorrect entry")
                                 time.sleep(1.5)
                         BC4 = math.sqrt(AC4*AC4 - AB4*AB4)
                         print("BC = ", BC4, "cm")
                     else:
                         if longatrouver2 == "AC":
                             while True:
-                                entrée = input("Entre la longueur de BC")
+                                entrée = input("Enter the length of BC")
                                 try:
                                     BC5 = float(entrée)
                                     break
                                 except ValueError:
-                                    print("Entrée incorrecte")
+                                    print("Incorrect entry")
                                     time.sleep(1.5)
                             while True:
-                                entrée = input("Entre la longueur de AB")
+                                entrée = input("Enter the length of AB")
                                 try:
                                     AB5 = float(entrée)
                                     break
                                 except ValueError:
-                                    print("Entrée incorrecte")
+                                    print("Incorrect entry")
                                     time.sleep(1.5)
                             AC5 = math.sqrt(BC5*BC5 + AB5*AB5)
                             print("AC", AC5, "cm")
                         else:
                             if longatrouver2 == "AB":
                                 while True:
-                                    entrée = input("Entre la longueur de AC")
+                                    entrée = input("Enter the length of AC")
                                     try:
                                         AC6 = float(entrée)
                                         break
                                     except ValueError:
-                                        print("Entrée incorrecte")
+                                        print("Incorrect entry")
                                         time.sleep(1.5)
                                 while True:
-                                    entrée = input("Entre la longueur de BC")
+                                    entrée = input("Enter the length of BC")
                                     try:
                                         BC6 = float(entrée)
                                         break
                                     except ValueError:
-                                        print("Entrée incorrecte")
+                                        print("Incorrect entry")
                                         time.sleep(1.5)
                                 AB6 = math.sqrt(AC6*AC6 - BC6*BC6)
                                 print("AB = ", AB6, "cm")
                 else:
                     if angledroit1 == "C":
-                        longatrouver3 = input('Entre la longueur du côté à trouver')
+                        longatrouver3 = input('Enter the length of the side to be found')
                         while longatrouver3 != "BC" and longatrouver3 != "AC" and longatrouver3 != "AB":
-                            print("Entrée incorrecte")
+                            print("Incorrect entry")
                             time.sleep(1.5)
-                            longatrouver3 = input("Entre la longueur du côté à trouver")
+                            longatrouver3 = input("Enter the length of the side to be found")
                         if longatrouver3 == "BC":
                             while True:
-                                entrée = input("Entre la longueur de AC")
+                                entrée = input("Enter the length of AC")
                                 try:
                                     AC7 = float(entrée)
                                     break
                                 except ValueError:
-                                    print("Entrée incorrecte")
+                                    print("Incorrect entry")
                                     time.sleep(1.5)
                             while True:
-                                entrée = input("Entre la longueur de AB")
+                                entrée = input("Enter the length of AB")
                                 try:
                                     AB7 = float(entrée)
                                     break
                                 except ValueError:
-                                    print("Entrée incorrecte")
+                                    print("Incorrect entry")
                                     time.sleep(1.5)
                             BC7 = math.sqrt(AB7*AB7 - AC7*AC7)
                             print("BC = ", BC7, "cm")
                         else:
                             if longatrouver3 == "AC":
                                 while True:
-                                    entrée = input("Entre la longueur de BC")
+                                    entrée = input("Enter the length of BC")
                                     try:
                                         BC8 = float(entrée)
                                         break
                                     except ValueError:
-                                        print("Entrée incorrecte")
+                                        print("Incorrect entry")
                                         time.sleep(1.5)
                                 while True:
-                                    entrée = input("Entre la longueur de AB")
+                                    entrée = input("Enter the length of AB")
                                     try:
                                         AB8 = float(entrée)
                                         break
                                     except ValueError:
-                                        print("Entrée incorrecte")
+                                        print("Incorrect entry")
                                         time.sleep(1.5)
                                 AC8 = math.sqrt(AB8*AB8 - BC8*BC8)
                                 print("AC = ", AC8, "cm")
                             else:
                                 if longatrouver3 == "AB":
                                     while True:
-                                        entrée = input("Entre la longueur de AC")
+                                        entrée = input("Enter the length of AC")
                                         try:
                                             AC9 = float(entrée)
                                             break
                                         except ValueError:
-                                            print("Entrée incorrecte")
+                                            print("Incorrect entry")
                                             time.sleep(1.5)
                                     while True:
-                                        entrée = input("Entre la longueur de BC")
+                                        entrée = input("Enter the length of BC")
                                         try:
                                             BC9 = float(entrée)
                                             break
                                         except ValueError:
-                                            print("Entrée incorrecte")
+                                            print("Incorrect entry")
                                             time.sleep(1.5)
                                     AB9 = math.sqrt(AC9*AC9 + BC9*BC9)
                                     print("AB = ", AB9, "cm")
         else:
-            if actionpyt == "2": #lignes 221 à 266 = la réciproque et la contraposée du théorème
+            if actionpyt == "2": #lines 221 to 266 = the converse and the contrapositive of the theorem
                 while True:
-                    entrée = input("Entre la longueur de AB")
+                    entrée = input("Enter the length of AB")
                     try:
                         AB10 = float(entrée)
                         break
                     except ValueError:
-                        print("Entrée incorrecte")
+                        print("Incorrect entry")
                         time.sleep(1.5)
                 while True:
-                    entrée = input("Entre la longueur de AC")
+                    entrée = input("Enter the length of AC")
                     try:
                         AC10 = float(entrée)
                         break
                     except ValueError:
-                        print("Entrée incorrecte")
+                        print("Incorrect entry")
                         time.sleep(1.5)
                 while True:
-                    entrée = input("Entre la longueur de BC")
+                    entrée = input("Enter the length of BC")
                     try:
                         BC10 = float(entrée)
                         break
                     except ValueError:
-                        print("Entrée incorrecte")
+                        print("Incorrect entry")
                         time.sleep(1.5)
                 listecôté = [AB10, AC10, BC10]
                 listetri = sorted(listecôté)
@@ -260,59 +260,59 @@ def pythagore(): #définir PythRobot
                 sommecarrésautrescôtésavecarrondi = round(carréautrecôté1 + carréautrecôté2, 2)
                 sommecarrésautrescôtéssansarrondi = carréautrecôté1 + carréautrecôté2
                 if int(carréplusgdcôté * 1000) / 1000 == int(sommecarrésautrescôtésavecarrondi * 1000) / 1000 or int(carréplusgdcôté * 1000) / 1000 == int(sommecarrésautrescôtéssansarrondi * 1000) / 1000: #on vérifie si "AB2 = AC2+BC2"
-                    print("Le triangle ABC est rectangle en", angle)
+                    print("Triangle ABC is right-angled in", angle)
                 else:
                     if plusgrandcôté*plusgrandcôté != deuxautrescôtés[0]*deuxautrescôtés[0] + deuxautrescôtés[1]*deuxautrescôtés[1]:
-                        print("Le triangle ABC n'est pas rectangle")
+                        print("Triangle ABC is not a right triangle")
             else:
                 if actionpyt == "3":
-                    print("Au revoir!")
+                    print("Bye !")
                     time.sleep(1.5)
                     break
 
-def trigonométrie(): #on définit la trigonométrie
-    print("Je suis TrigoBot, c'est moi qui exécutera les fonction trigonométriques sin, cos et tan.")
+def trigonométrie(): #we define trigonometry
+    print("I am TrigoBot, I will be performing the trigonometric functions sin, cos and tan.")
     time.sleep(0.5)
-    print("Je précice que l'angle de la fonction sera écrit avec UNIQUEMENT sa lettre du milieu, que nous travaillons dans un triangle ABC et que chaque côté sera exprimé en MAJUSCULES")
+    print("I specify that the angle of the function will be written with ONLY its middle letter, that we are working in a triangle ABC and that each side will be expressed in CAPITALS")
     time.sleep(0.5)
     while True:
-        actiontrig = input("Entre le numéro d'action que tu veux effectuer : \n1. Trouver la longueur d'un côté\n2. Trouver la mesure d'un angle\n3. Quitter TrigoBot\n")
+        actiontrig = input("Enter the action number you want to perform:\n1. Find the length of a side\n2. Find the measure of an angle\n3. Quit TrigoBot\n")
         while actiontrig != "1" and actiontrig != "2" and actiontrig!= "3":
-            print("Entrée incorrecte")
+            print("Incorrect entry")
             time.sleep(1.5)
-            actiontrig = input("Entre le numéro d'action que tu veux effectuer : \n1. Trouver la longueur d'un côté\n2. Trouver la mesure d'un angle\n3. Quitter TrigoBot\n")
-        if actiontrig == "1": #lignes 285 à 678 = la fonction trouver la longueur d'un côté avec sin, cos et tan
-            angledroittrig = input("Entre le nom de l'angle droit")
+            actiontrig = input("Enter the action number you want to perform:\n1. Find the length of a side\n2. Find the measure of an angle\n3. Quit TrigoBot\n")
+        if actiontrig == "1": #lines 285 to 678 = the function find the length of a side with sin, cos and tan
+            angledroittrig = input("Enter the name of the right angle")
             while angledroittrig != "A" and angledroittrig != "B" and angledroittrig != "C":
-                print("Entrée incorrecte")
+                print("Incorrect entry")
                 time.sleep(1.5)
-                angledroittrig = input("Entre le nom de l'angle droit")
-            côtéaveclongueurtrig = input("Entre la longueur du côté que tu as (d'abord son nom, puis sa longueur en cm)")
+                angledroittrig = input("Enter the name of the right angle")
+            côtéaveclongueurtrig = input("Enter the length of the side you have (first its name, then its length in cm)")
             while côtéaveclongueurtrig[:2] != "AB" and côtéaveclongueurtrig[:2] != "AC" and côtéaveclongueurtrig[:2] != "BC":
-                print("Entrée incorrecte")
+                print("Incorrect entry")
                 time.sleep(1.5)
-                côtéaveclongueurtrig = input("Entre la longueur du côté que tu as (d'abord son nom, puis sa longueur en cm)")
+                côtéaveclongueurtrig = input("Enter the length of the side you have (first its name, then its length in cm)")
             while True:
                 try:
                     float(côtéaveclongueurtrig[2:])
                     break
                 except ValueError:
-                    print("Entrée incorrecte")
+                    print("Incorrect entry")
                     time.sleep(1.5)
-                    côtéaveclongueurtrig = input("Entre la longueur du côté que tu as (d'abord son nom, puis sa longueur en cm)")
-            angleavecmesuretrig = input("Entre la mesure de l'angle que tu as (d'abord son nom, puis sa mesure, celui qui n'est pas de 90° et sans le signe degré)")
+                    côtéaveclongueurtrig = input("Enter the length of the side you have (first its name, then its length in cm)")
+            angleavecmesuretrig = input("Enter the measure of the angle you have (first its name, then its measure, the one that is not 90° and without the degree sign)")
             while angleavecmesuretrig[0] != "A" and angleavecmesuretrig[0] != "B" and angleavecmesuretrig[0] != "C":
-                print("Entrée incorrecte")
+                print("Incorrect entry")
                 time.sleep(1.5)
-                angleavecmesuretrig = input("Entre la mesure de l'angle que tu as (d'abord son nom, puis sa mesure, celui qui n'est pas de 90° et sans le signe degré)")
+                angleavecmesuretrig = input("Enter the measure of the angle you have (first its name, then its measure, the one that is not 90° and without the degree sign)")
             if angledroittrig == "A":
                 if côtéaveclongueurtrig[:2] == "AB":
                     if angleavecmesuretrig[0] == "B":
-                        côtéquoncherche1 = input("Entre le nom du côté que tu cherche")
+                        côtéquoncherche1 = input("Enter the name of the side you are looking for")
                         while côtéquoncherche1 != "AC" and côtéquoncherche1 != "BC":
-                            print("Entrée incorrecte")
+                            print("Incorrect entry")
                             time.sleep(1.5)
-                            côtéqunocherche1 = input("Entre le nom du côté que tu cherche")
+                            côtéqunocherche1 = input("Enter the name of the side you are looking for")
                         if côtéquoncherche1 == "AC":
                             angleautiliser1 = float(angleavecmesuretrig[1:])
                             longueurautiliser1 = float(côtéaveclongueurtrig[2:])
@@ -328,11 +328,11 @@ def trigonométrie(): #on définit la trigonométrie
                                 print("BC = ", BC1trig, "cm")
                     else:
                         if angleavecmesuretrig[0] == "C":
-                            côtéquoncherche2 = input("Entre le nom du côté que tu cherche")
+                            côtéquoncherche2 = input("Enter the name of the side you are looking for")
                             while côtéquoncherche2 != "AC" and côtéquoncherche2 != "BC":
-                                print("Entrée incorrecte")
+                                print("Incorrect entry")
                                 time.sleep(1.5)
-                                côtéquoncherche2 = input("Entre le nom du côté que tu cherche")
+                                côtéquoncherche2 = input("Enter the name of the side you are looking for")
                             if côtéquoncherche2 == "AC":
                                 angleautiliser3 = float(angleavecmesuretrig[1:])
                                 longueurautiliser3 = float(côtéaveclongueurtrig[2:])
@@ -349,11 +349,11 @@ def trigonométrie(): #on définit la trigonométrie
                 else:
                     if côtéaveclongueurtrig[:2] == "AC":
                         if angleavecmesuretrig[0] == "B":
-                            côtéquoncherche3 = input("Entre le nom du côté que tu cherche")
+                            côtéquoncherche3 = input("Enter the name of the side you are looking for")
                             while côtéquoncherche3 != "AB" and côtéquoncherche3 != "BC":
-                                print("Entrée incorrecte")
+                                print("Incorrect entry")
                                 time.sleep(1.5)
-                                côtéquoncherche3 = input("Entre le nom du côté que tu cherche")
+                                côtéquoncherche3 = input("Enter the name of the side you are looking for")
                             if côtéquoncherche3 == "AB":
                                 angleautiliser5 = float(angleavecmesuretrig[1:])
                                 longueurautiliser5 = float(côtéaveclongueurtrig[2:])
@@ -369,11 +369,11 @@ def trigonométrie(): #on définit la trigonométrie
                                     print("BC = ", BC3trig, "cm") 
                         else:
                             if angleavecmesuretrig[0] == "C":
-                                côtéquoncherche4 = input("Entre le nom du côté que tu cherche")
+                                côtéquoncherche4 = input("Enter the name of the side you are looking for")
                                 while côtéquoncherche4 != "AB" and côtéquoncherche4 != "BC":
-                                    print("Entrée incorrecte")
+                                    print("Incorrect entry")
                                     time.sleep(1.5)
-                                    côtéquoncherche4 = input("Entre le nom du côté que tu cherche")
+                                    côtéquoncherche4 = input("Enter the name of the side you are looking for")
                                 if côtéquoncherche4 == "AB":
                                     angleautiliser7 = float(angleavecmesuretrig[1:])
                                     longueurautiliser7 = float(côtéaveclongueurtrig[2:])
@@ -390,11 +390,11 @@ def trigonométrie(): #on définit la trigonométrie
                     else:
                         if côtéaveclongueurtrig[:2] == "BC":
                             if angleavecmesuretrig[0] == "B":
-                                côtéquoncherche5 = input("Entre le nom du côté que tu cherche")
+                                côtéquoncherche5 = input("Enter the name of the side you are looking for")
                                 while côtéquoncherche5 != "AB" and côtéquoncherche5 != "AC":
-                                    print("Entrée incorrecte")
+                                    print("Incorrect entry")
                                     time.sleep(1.5)
-                                    côtéquoncherche5 = input("Entre le nom du côté que tu cherche")
+                                    côtéquoncherche5 = input("Enter the name of the side you are looking for")
                                 if côtéquoncherche5 == "AB":
                                     angleautiliser9 = float(angleavecmesuretrig[1:])
                                     longueurautiliser9 = float(côtéaveclongueurtrig[2:])
@@ -410,11 +410,11 @@ def trigonométrie(): #on définit la trigonométrie
                                         print("AC = ", AC3trig, "cm")
                             else:
                                 if angleavecmesuretrig[0] == "C":
-                                    côtéquoncherche6 = input("Entre le nom du côté que tu cherche")
+                                    côtéquoncherche6 = input("Enter the name of the side you are looking for")
                                     while côtéquoncherche6 != "AB" and côtéquoncherche6 != "AC":
-                                        print("Entrée incorrecte")
+                                        print("Incorrect entry")
                                         time.sleep(1.5)
-                                        côtéquoncherche6 = input("Entre le nom du côté que tu cherche")
+                                        côtéquoncherche6 = input("Enter the name of the side you are looking for")
                                     if côtéquoncherche6 == "AB":
                                         angleautiliser11 = float(angleavecmesuretrig[1:])
                                         longueurautiliser11 = float(côtéaveclongueurtrig[2:])
@@ -432,11 +432,11 @@ def trigonométrie(): #on définit la trigonométrie
                 if angledroittrig == "B":
                     if côtéaveclongueurtrig[:2] == "AB":
                         if angleavecmesuretrig[0] == "A":
-                            côtéquoncherche7 = input("Entre le nom du côté que tu cherche")
+                            côtéquoncherche7 = input("Enter the name of the side you are looking for")
                             while côtéquoncherche7 != "AC" and côtéquoncherche7 != "BC":
-                                print("Entrée incorrecte")
+                                print("Incorrect entry")
                                 time.sleep(1.5)
-                                côtéquoncherche7 = input("Entre le nom du côté que tu cherche")
+                                côtéquoncherche7 = input("Enter the name of the side you are looking for")
                             if côtéquoncherche7 == "AC":
                                 angleautiliser13 = float(angleavecmesuretrig[1:])
                                 longueurautiliser13 = float(côtéaveclongueurtrig[2:])
@@ -452,11 +452,11 @@ def trigonométrie(): #on définit la trigonométrie
                                     print("BC = ", BC5trig, "cm")
                         else:
                             if angleavecmesuretrig[0] == "C":
-                                côtéquoncherche8 = input("Entre le nom du côté que tu cherche")
+                                côtéquoncherche8 = input("Enter the name of the side you are looking for")
                                 while côtéquoncherche8 != "AC" and côtéquoncherche8 != "BC":
-                                    print("Entrée incorrecte")
+                                    print("Incorrect entry")
                                     time.sleep(1.5)
-                                    côtéquoncherche8 = input("Entre le nom du côté que tu cherche")
+                                    côtéquoncherche8 = input("Enter the name of the side you are looking for")
                                 if côtéquoncherche8 == "AC":
                                     angleautiliser15 = float(angleavecmesuretrig[1:])
                                     longueurautiliser15 = float(côtéaveclongueurtrig[2:])
@@ -473,11 +473,11 @@ def trigonométrie(): #on définit la trigonométrie
                     else:
                         if côtéaveclongueurtrig[:2] == "AC":
                             if angleavecmesuretrig[0] == "A":
-                                côtéquoncherche9 = input("Entre le nom du côté que tu cherche")
+                                côtéquoncherche9 = input("Enter the name of the side you are looking for")
                                 while côtéquoncherche9 != "AB" and côtéquoncherche9 != "BC":
-                                    print("Entrée incorrecte")
+                                    print("Incorrect entry")
                                     time.sleep(1.5)
-                                    côtéquoncherche9 = input("Entre le nom du côté que tu cherche")
+                                    côtéquoncherche9 = input("Enter the name of the side you are looking for")
                                 if côtéquoncherche9 == "AB":
                                     angleautiliser17 = float(angleavecmesuretrig[1:])
                                     longueurautiliser17 = float(côtéaveclongueurtrig[2:])
@@ -493,11 +493,11 @@ def trigonométrie(): #on définit la trigonométrie
                                         print("BC = ", BC6trig, "cm")
                             else:
                                 if angleavecmesuretrig[0] == "C":
-                                    côtéquoncherche10 = input("Entre le nom du côté que tu cherche")
+                                    côtéquoncherche10 = input("Enter the name of the side you are looking for")
                                     while côtéquoncherche10 != "AB" and côtéquoncherche10 != "BC":
-                                        print("Entrée incorrecte")
+                                        print("Incorrect entry")
                                         time.sleep(1.5)
-                                        côtéquoncherche10 = input("Entre le nom du côté que tu cherche")
+                                        côtéquoncherche10 = input("Enter the name of the side you are looking for")
                                     if côtéquoncherche10 == "AB":
                                         angleautiliser19 = float(angleavecmesuretrig[1:])
                                         longueurautiliser19 = float(côtéaveclongueurtrig[2:])
@@ -514,11 +514,11 @@ def trigonométrie(): #on définit la trigonométrie
                         else:
                             if côtéaveclongueurtrig[:2] == "BC":
                                 if angleavecmesuretrig[0] == "A":
-                                    côtéquoncherche11 = input("Entre le nom du côté que tu cherche")
+                                    côtéquoncherche11 = input("Enter the name of the side you are looking for")
                                     while côtéquoncherche11 != "AB" and côtéquoncherche11 != "AC":
-                                        print("Entrée incorrecte")
+                                        print("Incorrect entry")
                                         time.sleep(1.5)
-                                        côtéquoncherche11 = input("Entre le nom du côté que tu cherche")
+                                        côtéquoncherche11 = input("Enter the name of the side you are looking for")
                                     if côtéquoncherche11 == "AB":
                                         angleautiliser21 = float(angleavecmesuretrig[1:])
                                         longueurautiliser21 = float(côtéaveclongueurtrig[2:])
@@ -534,11 +534,11 @@ def trigonométrie(): #on définit la trigonométrie
                                             print("AC = ", AC7trig, "cm")
                                 else:
                                     if angleavecmesuretrig[0] == "C":
-                                        côtéquoncherche12 = input("Entre le nom du côté que tu cherche")
+                                        côtéquoncherche12 = input("Enter the name of the side you are looking for")
                                         while côtéquoncherche12 != "AB" and côtéquoncherche12 != "AC":
-                                            print("Entrée incorrecte")
+                                            print("Incorrect entry")
                                             time.sleep(1.5)
-                                            côtéquoncherche12 = input("Entre le nom du côté que tu cherche")
+                                            côtéquoncherche12 = input("Enter the name of the side you are looking for")
                                         if côtéquoncherche12 == "AB":
                                             angleautiliser23 = float(angleavecmesuretrig[1:])
                                             longueurautiliser23 = float(côtéaveclongueurtrig[2:])
@@ -556,11 +556,11 @@ def trigonométrie(): #on définit la trigonométrie
                     if angledroittrig == "C":
                         if côtéaveclongueurtrig[:2] == "AB":
                             if angleavecmesuretrig[0] == "A":
-                                côtéquoncherche13 = input("Entre le nom du côté que tu cherche")
+                                côtéquoncherche13 = input("Enter the name of the side you are looking for")
                                 while côtéquoncherche13 != "AC" and côtéquoncherche13 != "BC":
-                                    print("Entrée incorrecte")
+                                    print("Incorrect entry")
                                     time.sleep(1.5)
-                                    côtéquoncherche13 = input("Entre le nom du côté que tu cherche")
+                                    côtéquoncherche13 = input("Enter the name of the side you are looking for")
                                 if côtéquoncherche13 == "AC":
                                     angleautiliser25 = float(angleavecmesuretrig[1:])
                                     longueurautiliser25 = float(côtéaveclongueurtrig[2:])
@@ -576,11 +576,11 @@ def trigonométrie(): #on définit la trigonométrie
                                         print("BC = ", BC8trig, "cm")
                             else:
                                 if angleavecmesuretrig[0] == "B":
-                                    côtéquoncherche14 = input("Entre le nom du côté que tu cherche")
+                                    côtéquoncherche14 = input("Enter the name of the side you are looking for")
                                     while côtéquoncherche14 != "AC" and côtéquoncherche14 != "BC":
-                                        print("Entrée incorrecte")
+                                        print("Incorrect entry")
                                         time.sleep(1.5)
-                                        côtéquoncherche14 = input("Entre le nom du côté que tu cherche")
+                                        côtéquoncherche14 = input("Enter the name of the side you are looking for")
                                     if côtéquoncherche14 == "AC":
                                         angleautiliser27 = float(angleavecmesuretrig[1:])
                                         longueurautiliser27 = float(côtéaveclongueurtrig[2:])
@@ -597,11 +597,11 @@ def trigonométrie(): #on définit la trigonométrie
                         else:
                             if côtéaveclongueurtrig[:2] == "AC":
                                 if angleavecmesuretrig[0] == "A":
-                                    côtéquoncherche15 = input("Entre le nom du côté que tu cherche")
+                                    côtéquoncherche15 = input("Enter the name of the side you are looking for")
                                     while côtéquoncherche15 != "AB" and côtéquoncherche15 != "BC":
-                                        print("Entrée incorrecte")
+                                        print("Incorrect entry")
                                         time.sleep(1.5)
-                                        côtéquoncherche15 = input("Entre le nom du côté que tu cherche") 
+                                        côtéquoncherche15 = input("Enter the name of the side you are looking for") 
                                     if côtéquoncherche15 == "AB":
                                         angleautiliser29 = float(angleavecmesuretrig[1:])
                                         longueurautiliser29 = float(côtéaveclongueurtrig[2:])
@@ -617,11 +617,11 @@ def trigonométrie(): #on définit la trigonométrie
                                             print("BC = ", BC10trig, "cm")
                                 else:
                                     if angleavecmesuretrig[0] == "B":
-                                        côtéquoncherche16 = input("Entre le nom du côté que tu cherche")
+                                        côtéquoncherche16 = input("Enter the name of the side you are looking for")
                                         while côtéquoncherche16 != "AB" and côtéquoncherche16 != "BC":
-                                            print("Entrée incorrecte")
+                                            print("Incorrect entry")
                                             time.sleep(1.5)
-                                            côtéquoncherche16 = input("Entre le nom du côté que tu cherche")
+                                            côtéquoncherche16 = input("Enter the name of the side you are looking for")
                                         if côtéquoncherche16 == "AB":
                                             angleautiliser31 = float(angleavecmesuretrig[1:])
                                             longueurautiliser31 = float(côtéaveclongueurtrig[2:])
@@ -638,11 +638,11 @@ def trigonométrie(): #on définit la trigonométrie
                             else:
                                 if côtéaveclongueurtrig[:2] == "BC":
                                     if angleavecmesuretrig[0] == "A":
-                                        côtéquoncherche17 = input("Entre le nom du côté que tu cherche")
+                                        côtéquoncherche17 = input("Enter the name of the side you are looking for")
                                         while côtéquoncherche17 != "AB":
-                                            print("Entrée incorrecte")
+                                            print("Incorrect entry")
                                             time.sleep(1.5)
-                                            côtéquoncherche17 = input("Entre le nom du côté que tu cherche")
+                                            côtéquoncherche17 = input("Enter the name of the side you are looking for")
                                         if côtéquoncherche17 == "AB":
                                             angleautiliser33 = float(angleavecmesuretrig[1:])
                                             longueurautiliser33 = float(côtéaveclongueurtrig[2:])
@@ -658,11 +658,11 @@ def trigonométrie(): #on définit la trigonométrie
                                                 print("AC = ", AC11trig, "cm")
                                     else:
                                         if angleavecmesuretrig[0] == "B":
-                                            côtéquoncherche18 = input("Entre le nom du côté que tu cherche")
+                                            côtéquoncherche18 = input("Enter the name of the side you are looking for")
                                             while côtéquoncherche18 != "AB" and côtéquoncherche18 != "AC":
-                                                print("Entrée incorrecte")
+                                                print("Incorrect entry")
                                                 time.sleep(1.5)
-                                                côtéquoncherche18 = input("Entre le nom du côté que tu cherche")
+                                                côtéquoncherche18 = input("Enter the name of the side you are looking for")
                                             if côtéquoncherche18 == "AB":
                                                 angleautiliser35 = float(angleavecmesuretrig[1:])
                                                 longueurautiliser35 = float(côtéaveclongueurtrig[2:])
@@ -677,43 +677,43 @@ def trigonométrie(): #on définit la trigonométrie
                                                     AC12trig = longueurautiliser36 * math.tan(angleradian36)
                                                     print("AC = ", AC12trig, "cm")
         else:
-            if actiontrig == "2": #lignes 681 à 918 = la fonction trouver la mesure d'un angle avec asin, acos et atan
-                angledroittrigangle = input("Entre l'angle droit du triangle")
+            if actiontrig == "2": #lines 681 to 918 = the function find the measure of an angle with asin, acos and atan
+                angledroittrigangle = input("Enter the right angle of the triangle")
                 while angledroittrigangle != "A" and angledroittrigangle != "B" and angledroittrigangle != "C":
-                    print("Entrée incorrecte")
+                    print("Incorrect entry")
                     time.sleep(1.5)
-                    angledroittrigangle = input("Entre l'angle droit du triangle")
-                côtéquona1 = input("Entre le nom du premier côté que tu as (d'abord son nom, puis sa longueur en cm)")
+                    angledroittrigangle = input("Enter the right angle of the triangle")
+                côtéquona1 = input("Enter the name of the first side you have (first its name, then its length in cm)")
                 while côtéquona1[:2] != "AB" and côtéquona1[:2] != "AC" and côtéquona1[:2] != "BC":
-                    print("Entrée incorrecte")
+                    print("Incorrect entry")
                     time.sleep(1.5)
-                    côtéquona1 = input("Entre le nom du premier côté que tu as (d'abord son nom, puis sa longueur en cm)")
+                    côtéquona1 = input("Enter the name of the first side you have (first its name, then its length in cm)")
                 while True:
                     try:
                         float(côtéquona1[2:])
                         break
                     except ValueError:
-                        print("Entrée incorrecte")
+                        print("Incorrect entry")
                         time.sleep(1.5)
-                        côtéquona1 = input("Entre le nom du premier côté que tu as (d'abord son nom, puis sa longueur en cm)")
-                côtéquona2 = input("Entre le nom du deuxième côté que tu as (d'abord son nom, puis sa longueur en cm)")
+                        côtéquona1 = input("Enter the name of the first side you have (first its name, then its length in cm)")
+                côtéquona2 = input("Enter the name of the second side you have (first its name, then its length in cm)")
                 while côtéquona2[:2] != "AB" and côtéquona2[:2] != "AC" and côtéquona2[:2] != "BC":
-                    print("Entrée incorrecte")
+                    print("Incorrect entry")
                     time.sleep(1.5)
-                    côtéquona2 = input("Entre le nom du deuxième côté que tu as (d'abord son nom, puis sa longueur en cm)")
+                    côtéquona2 = input("Enter the name of the second side you have (first its name, then its length in cm)")
                 while True:
                     try:
                         float(côtéquona2[2:])
                         break
                     except ValueError:
-                        print("Entrée incorrecte")
+                        print("Incorrect entry")
                         time.sleep(1.5)
-                        côtéquona2 = input("Entre le nom du deuxième côté que tu as (d'abord son nom, puis sa longueur en cm)")
-                anglequoncherche = input("Entre le nom de l'angle que tu cherche")
+                        côtéquona2 = input("Enter the name of the second side you have (first its name, then its length in cm)")
+                anglequoncherche = input("Enter the name of the angle you are looking for")
                 while anglequoncherche != "A" and anglequoncherche != "B" and anglequoncherche != "C":
-                    print("Entrée incorrecte")
+                    print("Incorrect entry")
                     time.sleep(1.5)
-                    anglequoncherche = input("Entre le nom de l'angle que tu cherche")
+                    anglequoncherche = input("Enter the name of the angle you are looking for")
                 côtéquonamesure1 = float(côtéquona1[2:])
                 côtéquonamesure2 = float(côtéquona2[2:])
                 if angledroittrigangle == "A":
@@ -721,222 +721,222 @@ def trigonométrie(): #on définit la trigonométrie
                         if anglequoncherche == "B":
                             angletrouvé1 = math.atan(côtéquonamesure2 / côtéquonamesure1)
                             angletrouvé1degré = math.degrees(angletrouvé1)
-                            print("L'angle B = ", angletrouvé1degré, "°")
+                            print("The angle B = ", angletrouvé1degré, "°")
                         else:
                             if anglequoncherche == "C":
                                 angletrouvé2 = math.atan(côtéquonamesure1 / côtéquonamesure2)
                                 angletrouvé2degré = math.degrees(angletrouvé2)
-                                print("L'angle C = ", angletrouvé2degré, "°")
+                                print("The angle C = ", angletrouvé2degré, "°")
                     else:
                         if côtéquona1[:2] == "AB" and côtéquona2[:2] == "BC":
                             if anglequoncherche == "B":
                                 angletrouvé3 = math.acos(côtéquonamesure1 / côtéquonamesure2)
                                 angletrouvé3degré = math.degrees(angletrouvé3)
-                                print("L'angle B = ", angletrouvé3degré, "°")
+                                print("The angle B = ", angletrouvé3degré, "°")
                             else:
                                 if anglequoncherche == "C":
                                     angletrouvé4 = math.asin(côtéquonamesure1 / côtéquonamesure2)
                                     angletrouvé4degré = math.degrees(angletrouvé4)
-                                    print("L'angle C =", angletrouvé4degré, "°")
+                                    print("The angle C =", angletrouvé4degré, "°")
                         else:
                             if côtéquona1[:2] == "AC" and côtéquona2[:2] == "BC":
                                 if anglequoncherche == "B":
                                     angletrouvé5 = math.asin(côtéquonamesure1 / côtéquonamesure2)
                                     angletrouvé5degré = math.degrees(angletrouvé5)
-                                    print("L'angle B =", angletrouvé5degré, "°")
+                                    print("The angle B =", angletrouvé5degré, "°")
                                 else:
                                     if anglequoncherche == "C":
                                         angletrouvé6 = math.acos(côtéquonamesure1 / côtéquonamesure2)
                                         angletrouvé6degré = math.degrees(angletrouvé6)
-                                        print("L'angle C =", angletrouvé6degré, "°")
+                                        print("The angle C =", angletrouvé6degré, "°")
                             else:
                                 if côtéquona1[:2] == "AC" and côtéquona2[:2] == "AB":
                                     if anglequoncherche == "B":
                                         angletrouvé7 = math.atan(côtéquonamesure1 / côtéquonamesure2)
                                         angletrouvé7degré = math.degrees(angletrouvé7)
-                                        print("L'angle B = ", angletrouvé7degré, "°")
+                                        print("The angle B = ", angletrouvé7degré, "°")
                                     else:
                                         if anglequoncherche == "C":
                                             angletrouvé8 = math.atan(côtéquonamesure2 / côtéquonamesure1)
                                             angletrouvé8degré = math.degrees(angletrouvé8)
-                                            print("L'angle C = ", angletrouvé8degré, "°")
+                                            print("The angle C = ", angletrouvé8degré, "°")
                                 else:
                                     if côtéquona1[:2] == "BC" and côtéquona2[:2] == "AB":
                                         if anglequoncherche == "B":
                                             angletrouvé9 = math.acos(côtéquonamesure2 / côtéquonamesure1)
                                             angletrouvé9degré = math.degrees(angletrouvé9)
-                                            print("L'angle B = ", angletrouvé9degré, "°")
+                                            print("The angle B = ", angletrouvé9degré, "°")
                                         else:
                                             if anglequoncherche == "C":
                                                 angletrouvé10 = math.asin(côtéquonamesure2 / côtéquonamesure1)
                                                 angletrouvé10degré = math.degrees(angletrouvé10)
-                                                print("L'angle C =", angletrouvé10degré, "°")
+                                                print("The angle C =", angletrouvé10degré, "°")
                                     else:
                                         if côtéquona1[:2] == "BC" and côtéquona2[:2] == "AC":
                                             if anglequoncherche == "B":
                                                 angletrouvé11 = math.asin(côtéquonamesure2 / côtéquonamesure1)
                                                 angletrouvé11degré = math.degrees(angletrouvé11)
-                                                print("L'angle B =", angletrouvé11degré, "°")
+                                                print("The angle B =", angletrouvé11degré, "°")
                                             else:
                                                 if anglequoncherche == "C":
                                                     angletrouvé12 = math.acos(côtéquonamesure2 / côtéquonamesure1)
                                                     angletrouvé12degré = math.degrees(angletrouvé12)
-                                                    print("L'angle C =", angletrouvé12degré, "°")
+                                                    print("The angle C =", angletrouvé12degré, "°")
                 else:
                     if angledroittrigangle == "B":
                         if côtéquona1[:2] == "AB" and côtéquona2[:2] == "AC":
                             if anglequoncherche == "A":
                                 angletrouvé13 = math.acos(côtéquonamesure1 / côtéquonamesure2)
                                 angletrouvé13degré = math.degrees(angletrouvé13)
-                                print("L'angle A = ", angletrouvé13degré, "°")
+                                print("The angle A = ", angletrouvé13degré, "°")
                             else:
                                 if anglequoncherche == "C":
                                     angletrouvé14 = math.asin(côtéquonamesure1 / côtéquonamesure2)
                                     angletrouvé14degré = math.degrees(angletrouvé14)
-                                    print("L'angle C = ", angletrouvé14degré, "°")
+                                    print("The angle C = ", angletrouvé14degré, "°")
                         else:
                             if côtéquona1[:2] == "AB" and côtéquona2[:2] == "BC":
                                 if anglequoncherche == "A":
                                     angletrouvé15 = math.atan(côtéquonamesure2 / côtéquonamesure1)
                                     angletrouvé15degré = math.degrees(angletrouvé15)
-                                    print("L'angle A = ", angletrouvé15degré, "°")
+                                    print("The angle A = ", angletrouvé15degré, "°")
                                 else:
                                     if anglequoncherche == "C":
                                         angletrouvé16 = math.atan(côtéquonamesure1 / côtéquonamesure2)
                                         angletrouvé16degré = math.degrees(angletrouvé16)
-                                        print("L'angle C =", angletrouvé16degré, "°")
+                                        print("The angle C =", angletrouvé16degré, "°")
                             else:
                                 if côtéquona1[:2] == "AC" and côtéquona2[:2] == "BC":
                                     if anglequoncherche == "A":
                                         angletrouvé17 = math.asin(côtéquonamesure2 / côtéquonamesure1)
                                         angletrouvé17degré = math.degrees(angletrouvé17)
-                                        print("L'angle A =", angletrouvé17degré, "°")
+                                        print("The angle A =", angletrouvé17degré, "°")
                                     else:
                                         if anglequoncherche == "C":
                                             angletrouvé18 = math.acos(côtéquonamesure2 / côtéquonamesure1)
                                             angletrouvé18degré = math.degrees(angletrouvé18)
-                                            print("L'angle C =", angletrouvé18degré, "°")
+                                            print("The angle C =", angletrouvé18degré, "°")
                                 else:
                                     if côtéquona1[:2] == "AC" and côtéquona2[:2] == "AB":
                                         if anglequoncherche == "A":
                                             angletrouvé19 = math.acos(côtéquonamesure2 / côtéquonamesure1)
                                             angletrouvé19degré = math.degrees(angletrouvé19)
-                                            print("L'angle A = ", angletrouvé19degré, "°")
+                                            print("The angle A = ", angletrouvé19degré, "°")
                                         else:
                                             if anglequoncherche == "C":
                                                 angletrouvé20 = math.asin(côtéquonamesure2 / côtéquonamesure1)
                                                 angletrouvé20degré = math.degrees(angletrouvé20)
-                                                print("L'angle C = ", angletrouvé20degré, "°")
+                                                print("The angle C = ", angletrouvé20degré, "°")
                                     else:
                                         if côtéquona1[:2] == "BC" and côtéquona2[:2] == "AB":
                                             if anglequoncherche == "A":
                                                 angletrouvé21 = math.atan(côtéquonamesure1 / côtéquonamesure2)
                                                 angletrouvé21degré = math.degrees(angletrouvé21)
-                                                print("L'angle A = ", angletrouvé21degré, "°")
+                                                print("The angle A = ", angletrouvé21degré, "°")
                                             else:
                                                 if anglequoncherche == "C":
                                                     angletrouvé22 = math.atan(côtéquonamesure2 / côtéquonamesure1)
                                                     angletrouvé22degré = math.degrees(angletrouvé22)
-                                                    print("L'angle C =", angletrouvé22degré, "°")
+                                                    print("The angle C =", angletrouvé22degré, "°")
                                         else:
                                             if côtéquona1[:2] == "BC" and côtéquona2[:2] == "AC":
                                                 if anglequoncherche == "A":
                                                     angletrouvé23 = math.asin(côtéquonamesure1 / côtéquonamesure2)
                                                     angletrouvé23degré = math.degrees(angletrouvé23)
-                                                    print("L'angle A =", angletrouvé23degré, "°")
+                                                    print("The angle A =", angletrouvé23degré, "°")
                                                 else:
                                                     if anglequoncherche == "C":
                                                         angletrouvé24 = math.acos(côtéquonamesure1 / côtéquonamesure2)
                                                         angletrouvé24degré = math.degrees(angletrouvé24)
-                                                        print("L'angle C =", angletrouvé24degré, "°")
+                                                        print("The angle C =", angletrouvé24degré, "°")
                     else:
                         if angledroittrigangle == "C":
                             if côtéquona1[:2] == "AB" and côtéquona2[:2] == "AC":
                                 if anglequoncherche == "A":
                                     angletrouvé25 = math.acos(côtéquonamesure2 / côtéquonamesure1)
                                     angletrouvé25degré = math.degrees(angletrouvé25)
-                                    print("L'angle A = ", angletrouvé25degré, "°")
+                                    print("The angle A = ", angletrouvé25degré, "°")
                                 else:
                                     if anglequoncherche == "B":
                                         angletrouvé26 = math.asin(côtéquonamesure2 / côtéquonamesure1)
                                         angletrouvé26degré = math.degrees(angletrouvé26)
-                                        print("L'angle B = ", angletrouvé26degré, "°")
+                                        print("The angle B = ", angletrouvé26degré, "°")
                             else:
                                 if côtéquona1[:2] == "AB" and côtéquona2[:2] == "BC":
                                     if anglequoncherche == "A":
                                         angletrouvé27 = math.asin(côtéquonamesure2 / côtéquonamesure1)
                                         angletrouvé27degré = math.degrees(angletrouvé27)
-                                        print("L'angle A = ", angletrouvé27degré, "°")
+                                        print("The angle A = ", angletrouvé27degré, "°")
                                     else:
                                         if anglequoncherche == "B":
                                             angletrouvé28 = math.acos(côtéquonamesure2 / côtéquonamesure1)
                                             angletrouvé28degré = math.degrees(angletrouvé28)
-                                            print("L'angle B =", angletrouvé28degré, "°")
+                                            print("The angle B =", angletrouvé28degré, "°")
                                 else:
                                     if côtéquona1[:2] == "AC" and côtéquona2[:2] == "BC":
                                         if anglequoncherche == "A":
                                             angletrouvé29 = math.atan(côtéquonamesure2 / côtéquonamesure1)
                                             angletrouvé29degré = math.degrees(angletrouvé29)
-                                            print("L'angle A =", angletrouvé29degré, "°")
+                                            print("The angle A =", angletrouvé29degré, "°")
                                         else:
                                             if anglequoncherche == "B":
                                                 angletrouvé30 = math.atan(côtéquonamesure1 / côtéquonamesure2)
                                                 angletrouvé30degré = math.degrees(angletrouvé30)
-                                                print("L'angle B =", angletrouvé30degré, "°")
+                                                print("The angle B =", angletrouvé30degré, "°")
                                     else:
                                         if côtéquona1[:2] == "AC" and côtéquona2[:2] == "AB":
                                             if anglequoncherche == "A":
                                                 angletrouvé31 = math.acos(côtéquonamesure1 / côtéquonamesure2)
                                                 angletrouvé31degré = math.degrees(angletrouvé31)
-                                                print("L'angle A = ", angletrouvé31degré, "°")
+                                                print("The angle A = ", angletrouvé31degré, "°")
                                             else:
                                                 if anglequoncherche == "B":
                                                     angletrouvé32 = math.asin(côtéquonamesure1 / côtéquonamesure2)
                                                     angletrouvé32degré = math.degrees(angletrouvé32)
-                                                    print("L'angle B = ", angletrouvé32degré, "°")
+                                                    print("The angle B = ", angletrouvé32degré, "°")
                                         else:
                                             if côtéquona1[:2] == "BC" and côtéquona2[:2] == "AB":
                                                 if anglequoncherche == "A":
                                                     angletrouvé33 = math.asin(côtéquonamesure1 / côtéquonamesure2)
                                                     angletrouvé33degré = math.degrees(angletrouvé33)
-                                                    print("L'angle A = ", angletrouvé33degré, "°")
+                                                    print("The angle A = ", angletrouvé33degré, "°")
                                                 else:
                                                     if anglequoncherche == "B":
                                                         angletrouvé34 = math.acos(côtéquonamesure1 / côtéquonamesure2)
                                                         angletrouvé34degré = math.degrees(angletrouvé34)
-                                                        print("L'angle B =", angletrouvé34degré, "°")
+                                                        print("The angle B =", angletrouvé34degré, "°")
                                             else:
                                                 if côtéquona1[:2] == "BC" and côtéquona2[:2] == "AC":
                                                     if anglequoncherche == "A":
                                                         angletrouvé35 = math.atan(côtéquonamesure1 / côtéquonamesure2)
                                                         angletrouvé35degré = math.degrees(angletrouvé35)
-                                                        print("L'angle A =", angletrouvé35degré, "°")
+                                                        print("The angle A =", angletrouvé35degré, "°")
                                                     else:
                                                         if anglequoncherche == "B":
                                                             angletrouvé36 = math.atan(côtéquonamesure2 / côtéquonamesure1)
                                                             angletrouvé36degré = math.degrees(angletrouvé36)
-                                                            print("L'angle B =", angletrouvé36degré, "°")  
+                                                            print("The angle B =", angletrouvé36degré, "°")  
             else:
                 if actiontrig == "3":
-                    print("Au revoir !")
+                    print("Bye !")
                     time.sleep(1.5)
                     break
-def quitter(): # on définit "quitter"
-    print("Merci d'avoir utilisé MathRobot !")
+def quitter(): #we define "quit"
+    print("Thank you for using MathRobot!")
     time.sleep(1.5)
     os.system('cls' if os.name == 'nt' else 'clear')
     exit()
 
 print("Bonjour")
 time.sleep(0.5)
-print("Je suis MathRobot, j'éxécute plein de choses en maths")
+print("JI'm MathRobot, I do a lot of math stuff")
 time.sleep(0.5)
 while True:
-    quoifaire = input("Entre le numéro de ce que tu veux que je fasse :\n1. Pythagore\n2. Trigonométrie\n3. Quitter MathRobot\n")
+    quoifaire = input("Enter the number of what you want me to do:\n1. Pythagoras\n2. Trigonometry\n3. Quit MathRobot\n") #we ask the robot what to do
     while quoifaire != "1" and quoifaire != "2" and quoifaire != "3":
-        print("Entrée incorrecte")
+        print("Incorrect entry")
         time.sleep(1.5)
-        quoifaire = input("Entre le numéro de ce que tu veux que je fasse :\n1. Pythagore\n2. Trigonométrie\n3. Quitter MathRobot\n") #on demande quoi faire au robot
+        quoifaire = input("Enter the number of what you want me to do:\n1. Pythagoras\n2. Trigonometry\n3. Quit MathRobot\n")
     if quoifaire == "1":
         pythagore()
     else:
