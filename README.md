@@ -1,18 +1,10 @@
-Voici mon projet Python :                                                       
+Here's my Python project:
 
 MATHROBOT
 
-Son travail : résoudre (pour l'instant) le théorème de Pythagore, mathématicien 
-des années 500 av. J-C connu surtout pour son théorème qui relie les côtés des 
-triangles rectangle. MathRobot peut aussi résoudre les fonction sinus, cosinus et 
-tangeante qui appartiennent au domaine de la trigonométrie qui relie les côtés
-et les angles des triangles rectangle. Cette version de MathRobot s'éxécute sur
-un terminal d'éxécution (VSCode). Vous pourrez trouver plus tard une version
-sur Tkinter.
-N'hésitez pas à mettre des commentaires dans la partie suivante de ce fichier :
+Its task: to solve (for now) the theorem of Pythagoras, a mathematician from the 500s BC best known for his theorem relating the sides of right triangles. MathRobot can also solve the sine, cosine, and tangent functions, which belong to the field of trigonometry and relate the sides and angles of right triangles. There are two versions of MathRobot: one that runs on a terminal (VSCode) and one now available that runs using Tkinter!
+Feel free to add comments in the following section of this file:
 
-COMMENTAIRES :
+COMMENTS:
 
-- 
-
-# MathRobot
+-
