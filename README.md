@@ -1,14 +1,12 @@
-Here's my Python project:
+Voici mon projet Python :
 
 MATHROBOT
 
-Its task: to solve (for now) the theorem of Pythagoras, a 6th-century BC mathematician best known for his theorem relating the sides of right triangles. MathRobot can also solve the sine, cosine, and tangent functions, which are part of trigonometry and relate the sides and angles of right triangles. There are two versions of MathRobot: one that runs on a terminal (VSCode) and another that is now available with Tkinter! Don’t forget to install Python on your computer via this link: https://www.python.org/.
+Sa mission : résoudre (pour l’instant) le théorème de Pythagore, un mathématicien du VIe siècle av. J.-C. surtout connu pour son théorème qui relie les côtés des triangles rectangles. MathRobot peut aussi résoudre les fonctions sinus, cosinus et tangente, qui font partie de la trigonométrie et permettent de relier les côtés et les angles des triangles rectangles. Il existe deux versions de MathRobot : une qui fonctionne dans un terminal (VSCode), et une autre désormais disponible avec Tkinter ! N’oubliez pas d’installer Python sur votre ordinateur via ce lien : https://www.python.org/.
 
-To run the “terminal” program, download it, open it with a code editor (either an app or online at https://www.online-python.com/), and then launch it. After that, simply follow the instructions provided in the terminal. For Tkinter, it’s almost the same, except that you’ll need to run it in a desktop application, not online. Personally, I’ve only tested it on VSCode, so I’m not sure if it works with other applications. You just need to follow the same steps as with the terminal interface, but the graphical interface will open, and you’ll simply follow the instructions, this time with buttons and drop-down menus.
+Pour exécuter le programme en mode "terminal", téléchargez-le, ouvrez-le avec un éditeur de code (soit une application, soit en ligne sur https://www.online-python.com/), puis lancez-le. Ensuite, il suffit de suivre les instructions affichées dans le terminal. Pour la version Tkinter, c’est presque la même chose, sauf qu’il faut la lancer dans une application de bureau, et non en ligne. Personnellement, je ne l’ai testée que sur VSCode, donc je ne sais pas si cela fonctionne avec d’autres applications. Il suffit de suivre les mêmes étapes que pour l’interface terminale, sauf que cette fois une interface graphique s’ouvrira, et vous suivrez les instructions, cette fois avec des boutons et des menus déroulants.
 
-Feel free to comment on the following section of this file:
+N'hésitez pas à commenter dans la section suivante de ce fichier :
 
-COMMENTS:
+COMMENTAIRES :
 
--
-P.S. I’m a French developer, so my variables and def() functions will be written in French, but for easier reading, I’ve written all the interfaces (terminal and Tkinter) in English. Happy reading!
