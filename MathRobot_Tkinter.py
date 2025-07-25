@@ -1,8 +1,10 @@
-import math #import math library
-import tkinter as tk #import Tkinter library
-from tkinter import messagebox #import alert messages library
-from tkinter import * #import option menu library
-import os 
+import math #importer les maths
+import time #importer le temps
+import tkinter as tk #importer l'éditeur d'interface
+from tkinter import messagebox #importer les messages d'alerte
+from tkinter import * #importer les menus déroulants
+import os
+import turtle #importer le stylo
 
 # -------------------- LE CODE --------------------
 
@@ -89,17 +91,17 @@ def validerentréescôtéspythrobotrectangularité():
     ACrectangularitépythrobot = entréeACpythrobotrectangularité.get()
     BCrectangularitépythrobot = entréeBCpythrobotrectangularité.get()
     if not est_nombre(ABrectangularitépythrobot):
-        messagebox.showwarning("Warning", "Unencrypted input on input AB. Try again")
+        messagebox.showwarning("Attention", "Entrée non chiffrée sur l'entrée AB. Réessayer")
         entréeABpythrobotrectangularité.delete(0, tk.END)
         entréeABpythrobotrectangularité.focus()
         return
     if not est_nombre(ACrectangularitépythrobot):
-        messagebox.showwarning("Warning", "Unencrypted input on input AC. Try again")
+        messagebox.showwarning("Attention", "Entrée non chiffrée sur l'entrée AC. Réessayer")
         entréeACpythrobotrectangularité.delete(0, tk.END)
         entréeACpythrobotrectangularité.focus()
         return
     if not est_nombre(BCrectangularitépythrobot):
-        messagebox.showwarning("Warning", "Unencrypted input on input BC. Try again")
+        messagebox.showwarning("Attention", "Entrée non chiffrée sur l'entrée BC. Réessayer")
         entréeBCpythrobotrectangularité.delete(0, tk.END)
         entréeBCpythrobotrectangularité.focus()
         return
@@ -126,11 +128,11 @@ def validerentréescôtéspythrobotrectangularité():
     sommecarrésautrescôtésavecarrondipythrobotrectangularité = round(carréautrecôté1pythrobotrectangularité + carréautrecôté2pythrobotrectangularité, 2)
     sommecarrésautrescôtéssansarrondipythrobotrectangularité = carréautrecôté1pythrobotrectangularité + carréautrecôté2pythrobotrectangularité
     if int(carréplusgdcôtépythrobotrectangularité * 1000) / 1000 == int(sommecarrésautrescôtésavecarrondipythrobotrectangularité * 1000) / 1000 or int(carréplusgdcôtépythrobotrectangularité * 1000) / 1000 == int(sommecarrésautrescôtéssansarrondipythrobotrectangularité * 1000) / 1000:
-        txtsirectangleoupaspythrobotrectanglarité.config(text="Triangle ABC is right-angled in" + anglepythrobotrectangularité)
+        txtsirectangleoupaspythrobotrectanglarité.config(text="Le triangle ABC est rectangle en" + anglepythrobotrectangularité)
         txtsirectangleoupaspythrobotrectanglarité.place(x=350, y=250)
         txtsirectangleoupaspythrobotrectanglarité.update_idletasks()
     elif plusgrandcôtépythrobotrectangularité**2 != deuxautrescôtéspythrobotrectangularité[0]**2 + deuxautrescôtéspythrobotrectangularité[1]**2:
-        txtsirectangleoupaspythrobotrectanglarité.config(text="Triangle ABC is not a right triangle")
+        txtsirectangleoupaspythrobotrectanglarité.config(text="Le triangel ABC n'est pas rectangle")
         txtsirectangleoupaspythrobotrectanglarité.place(x=350, y=250)
         txtsirectangleoupaspythrobotrectanglarité.update_idletasks()
     boutonquitterrectangularitépythrobot.place(x=750, y=735)
@@ -207,12 +209,12 @@ def validercôtéquoncherchepythrobot():
     txtcmcôtéentrée2pythrobottrouvercôté.update_idletasks()
     boutonvaliderentréescôtéspythrobottrouvercôté.place(x=800, y=200)
     boutonvaliderentréescôtéspythrobottrouvercôté.update_idletasks()
-    if choixcôtéquoncherche == "Side we are looking for : AB":
+    if choixcôtéquoncherche == "Côté qu'on cherche : AB":
         txtACcôtéhautentrée1pythrobottrouvercôté.place(x=710, y=135)
         txtACcôtéhautentrée1pythrobottrouvercôté.update_idletasks()
         txtBCcôtéhautentrée2pythrobottrouvercôté.place(x=710, y=165)
         txtBCcôtéhautentrée2pythrobottrouvercôté.update_idletasks()
-    elif choixcôtéquoncherche == "Side we are looking for : AC":
+    elif choixcôtéquoncherche == "Côté qu'on cherche : AC":
         txtABcôtéentrée1pythrobottrouvercôté.place(x=710, y=135)
         txtABcôtéentrée1pythrobottrouvercôté.update_idletasks()
         txtBCcôtéhautentrée2pythrobottrouvercôté.place(x=710, y=165)
@@ -229,12 +231,12 @@ def validerentréescôtéspythrobottrouvercôté():
     entrée1 = entrée1ercôtépythrobottrouvercôté.get()
     entrée2 = entrée2ecôtépythrobottrouvercôté.get()
     if not est_nombre(entrée1):
-        messagebox.showwarning("Warning", "Unencrypted input on top line. Try again")
+        messagebox.showwarning("Attention", "Entrée non chiffrée sur la ligne du haut. Réessayer")
         entrée1ercôtépythrobottrouvercôté.delete(0, tk.END)
         entrée1ercôtépythrobottrouvercôté.focus()
         return
     if not est_nombre(entrée2):
-        messagebox.showwarning("Warning", "Unencrypted entry on the bottom line. Try again")
+        messagebox.showwarning("Attention", "Entrée non chiffrée sur la ligne du bas. Réessayer")
         entrée2ecôtépythrobottrouvercôté.delete(0, tk.END)
         entrée2ecôtépythrobottrouvercôté.focus()
         return
@@ -245,50 +247,50 @@ def validerentréescôtéspythrobottrouvercôté():
     entrée2ecôtépythrobottrouvercôté.config(state="disabled")
     boutonquitteraprèsavoirtrouvécôtépythrobot.place(x=750, y=735)
     boutonquitteraprèsavoirtrouvécôtépythrobot.update_idletasks()
-    if choixangledroitpythrobot == "Right angle : A":
-        if choixcôtéquoncherche == "Side we are looking for : BC":
+    if choixangledroitpythrobot == "Angle droit : A":
+        if choixcôtéquoncherche == "Côté qu'on cherche : BC":
             côtétrouvé = math.sqrt(entrée1**2 + entrée2**2)
             txtBCrésultatcôtépythrobottrouvercôté.config(text=f"BC = {côtétrouvé} cm")
             txtBCrésultatcôtépythrobottrouvercôté.place(relx=0.5, rely=0.5, anchor="center", y=-175)
             txtBCrésultatcôtépythrobottrouvercôté.update_idletasks()
-        elif choixcôtéquoncherche == "Side we are looking for : AB":
+        elif choixcôtéquoncherche == "Côté qu'on cherche : AB":
             côtétrouvé = math.sqrt(max(entrée1, entrée2)**2 - min(entrée1, entrée2)**2)
             txtABrésultatcôtépythrobottrouvercôté.config(text=f"AB = {côtétrouvé} cm")
             txtABrésultatcôtépythrobottrouvercôté.place(relx=0.5, rely=0.5, anchor="center", y=-175)
             txtABrésultatcôtépythrobottrouvercôté.update_idletasks()
-        elif choixcôtéquoncherche == "Side we are looking for : AC":
+        elif choixcôtéquoncherche == "Côté qu'on cherche : AC":
             côtétrouvé = math.sqrt(max(entrée1, entrée2)**2 - min(entrée1, entrée2)**2)
             txtACrésultatcôtépythrobottrouvercôté.config(text=f"AC = {côtétrouvé} cm")
             txtACrésultatcôtépythrobottrouvercôté.place(relx=0.5, rely=0.5, anchor="center", y=-175)
             txtACrésultatcôtépythrobottrouvercôté.update_idletasks()
-    elif choixangledroitpythrobot == "Right angle : B":
-        if choixcôtéquoncherche == "Side we are looking for : AC":
+    elif choixangledroitpythrobot == "Angle droit : B":
+        if choixcôtéquoncherche == "Côté qu'on cherche : AC":
             côtétrouvé = math.sqrt(entrée1**2 + entrée2**2)
             txtACrésultatcôtépythrobottrouvercôté.config(text=f"AC = {côtétrouvé} cm")
             txtACrésultatcôtépythrobottrouvercôté.place(relx=0.5, rely=0.5, anchor="center", y=-175)
             txtACrésultatcôtépythrobottrouvercôté.update_idletasks()
-        elif choixcôtéquoncherche == "Side we are looking for : AB":
+        elif choixcôtéquoncherche == "Côté qu'on cherche : AB":
             côtétrouvé = math.sqrt(max(entrée1, entrée2)**2 - min(entrée1, entrée2)**2)
             txtABrésultatcôtépythrobottrouvercôté.config(text=f"AB = {côtétrouvé} cm")
             txtABrésultatcôtépythrobottrouvercôté.place(relx=0.5, rely=0.5, anchor="center", y=-175)
             txtABrésultatcôtépythrobottrouvercôté.update_idletasks()
-        elif choixcôtéquoncherche == "Side we are looking for : BC":
+        elif choixcôtéquoncherche == "Côté qu'on cherche : BC":
             côtétrouvé = math.sqrt(max(entrée1, entrée2)**2 - min(entrée1, entrée2)**2)
             txtBCrésultatcôtépythrobottrouvercôté.config(text=f"BC = {côtétrouvé} cm")
             txtBCrésultatcôtépythrobottrouvercôté.place(relx=0.5, rely=0.5, anchor="center", y=-175)
             txtBCrésultatcôtépythrobottrouvercôté.update_idletasks()
-    elif choixangledroitpythrobot == "Right angle : C":
-        if choixcôtéquoncherche == "Side we are looking for : AB":
+    elif choixangledroitpythrobot == "Angle droit : C":
+        if choixcôtéquoncherche == "Côté qu'on cherche : AB":
             côtétrouvé = math.sqrt(entrée1**2 + entrée2**2)
             txtABrésultatcôtépythrobottrouvercôté.config(text=f"AB = {côtétrouvé} cm")
             txtABrésultatcôtépythrobottrouvercôté.place(relx=0.5, rely=0.5, anchor="center", y=-175)
             txtABrésultatcôtépythrobottrouvercôté.update_idletasks()
-        elif choixcôtéquoncherche == "Side we are looking for : AC":
+        elif choixcôtéquoncherche == "Côté qu'on cherche : AC":
             côtétrouvé = math.sqrt(max(entrée1, entrée2)**2 - min(entrée1, entrée2)**2)
             txtACrésultatcôtépythrobottrouvercôté.config(text=f"AC = {côtétrouvé} cm")
             txtACrésultatcôtépythrobottrouvercôté.place(relx=0.5, rely=0.5, anchor="center", y=-175)
             txtACrésultatcôtépythrobottrouvercôté.update_idletasks()
-        elif choixcôtéquoncherche == "Side we are looking for : BC":
+        elif choixcôtéquoncherche == "Côté qu'on cherche : BC":
             côtétrouvé = math.sqrt(max(entrée1, entrée2)**2 - min(entrée1, entrée2)**2)
             txtBCrésultatcôtépythrobottrouvercôté.config(text=f"BC = {côtétrouvé} cm")
             txtBCrésultatcôtépythrobottrouvercôté.place(relx=0.5, rely=0.5, anchor="center", y=-175)
@@ -376,23 +378,23 @@ def trouvercôtétrigobot():
     selectiontrigobotaction.place_forget()
     txtdescriptiontrigobottrouvercôté.place(x=290, y=50)
     txtdescriptiontrigobottrouvercôté.update_idletasks()
-    menuangledroittigobottrouvercôté.place(x=20, y=150)
+    menuangledroittigobottrouvercôté.place(x=40, y=150)
     menuangledroittigobottrouvercôté.update_idletasks()
-    boutonvaliderangledroitrigobottrouvercôté.place(x=40, y=185)
+    boutonvaliderangledroitrigobottrouvercôté.place(x=60, y=185)
     boutonvaliderangledroitrigobottrouvercôté.update_idletasks()
 
 def validerangledroittrigobottrouvercôté():
     menuangledroittigobottrouvercôté.bind("<Button-1>", lambda e: "break")
     boutonvaliderangledroitrigobottrouvercôté.place_forget()
-    menucôtéquonatrigobottrouvercôté.place(x=185, y=150)
+    menucôtéquonatrigobottrouvercôté.place(x=205, y=150)
     menucôtéquonatrigobottrouvercôté.update_idletasks()
-    boutonvalidercôtéquatrigobottrouvercôtéaveclongueur.place(x=370, y=185)
+    boutonvalidercôtéquatrigobottrouvercôtéaveclongueur.place(x=390, y=185)
     boutonvalidercôtéquatrigobottrouvercôtéaveclongueur.update_idletasks()
-    entréelongueurcôtéquatrigobottrouvercôté.place(x=360, y=149.5)
+    entréelongueurcôtéquatrigobottrouvercôté.place(x=380, y=149.5)
     entréelongueurcôtéquatrigobottrouvercôté.update_idletasks()
-    txtégalcôtéquonatrigobottrouvercôté.place(x=340, y=148.5)
+    txtégalcôtéquonatrigobottrouvercôté.place(x=360, y=148.5)
     txtégalcôtéquonatrigobottrouvercôté.update_idletasks()
-    txtcmcôtéquonatrigobottrouvercôté.place(x=535, y=148)
+    txtcmcôtéquonatrigobottrouvercôté.place(x=555, y=148)
     txtcmcôtéquonatrigobottrouvercôté.update_idletasks()
 
 def validercôtéquonatrigobottrouvercôtéaveclongueur():
@@ -400,41 +402,41 @@ def validercôtéquonatrigobottrouvercôtéaveclongueur():
     try:
         float(entréecôtéquonatrigobottrouvercôté)
     except ValueError:
-        messagebox.showwarning("Warning", "Unencrypted input. Try again")
+        messagebox.showwarning("Attention", "Entrée non chiffrée. Réessayer")
         entréelongueurcôtéquatrigobottrouvercôté.delete(0, tk.END)
         entréelongueurcôtéquatrigobottrouvercôté.focus()
         return
     menucôtéquonatrigobottrouvercôté.bind("<Button-1>", lambda e: "break")
     entréelongueurcôtéquatrigobottrouvercôté.config(state="disabled")
     boutonvalidercôtéquatrigobottrouvercôtéaveclongueur.place_forget()
-    menuanglequonatrigobottrouvercôté.place(x=585, y=148.5)
+    menuanglequonatrigobottrouvercôté.place(x=605, y=148.5)
     menuanglequonatrigobottrouvercôté.update_idletasks()
-    boutonvalideranglequonatrigobottrouvercôté.place(x=740, y=185)
+    boutonvalideranglequonatrigobottrouvercôté.place(x=790, y=185)
     boutonvalideranglequonatrigobottrouvercôté.update_idletasks()
-    entréeanglequonatrigobottrouvercôté.place(x=790, y=147.5)
+    entréeanglequonatrigobottrouvercôté.place(x=780, y=147.5)
     entréeanglequonatrigobottrouvercôté.update_idletasks()
-    txtégalanglequonatrigobottrouvercôté.place(x=770, y=147.5)
+    txtégalanglequonatrigobottrouvercôté.place(x=760, y=147.5)
     txtégalanglequonatrigobottrouvercôté.update_idletasks()
-    txtdegréanglequonatrigobottrouvercôté.place(x=965, y=147.5)
+    txtdegréanglequonatrigobottrouvercôté.place(x=955, y=147.5)
     txtdegréanglequonatrigobottrouvercôté.update_idletasks()
 
 def valideranglequonatrigobottrouvercôté():
     angledroitchoisitrigobottrouvercôté = angledroittriangletrigobottrouvercôté.get()
     anglequonachoisitrigobottrouvercôté = anglequonatrigobottrouvercôté.get()
     if anglequonachoisitrigobottrouvercôté[-1:] == angledroitchoisitrigobottrouvercôté[-1:]:
-        messagebox.showwarning("Warning", "The chosen angle corresponds to the right angle. Please choose another angle")
+        messagebox.showwarning("Attention", "L'angle choisi correspond à l'angle droit. Veuillez chosir un autre angle")
         return
     choixentréeanglequonatrigobottrouvercôté = entréeanglequonatrigobottrouvercôté.get()
     try:
         float(choixentréeanglequonatrigobottrouvercôté)
     except ValueError:
-        messagebox.showwarning("Warning", "Unencrypted input. Try again")
+        messagebox.showwarning("Attention", "Entrée non chiffrée. Réessayer")
         entréeanglequonatrigobottrouvercôté.delete(0, tk.END)
         entréeanglequonatrigobottrouvercôté.focus()
         return
     choixentréeanglequonatrigobottrouvercôté = float(choixentréeanglequonatrigobottrouvercôté)
     if choixentréeanglequonatrigobottrouvercôté >= 90:
-        messagebox.showwarning("Warning", "Angle value not correct. Please enter a value less than 90°")
+        messagebox.showwarning("Attention", "Valeur de l'angle non conforme. Veuillez entrer une valeur inférieure à 90°")
         return
     boutonvalideranglequonatrigobottrouvercôté.place_forget()
     menuanglequonatrigobottrouvercôté.bind("<Button-1>", lambda e: "break")
@@ -448,7 +450,7 @@ def validercôtéquoncherchetrigobottrouvercôté():
     choixcôtéquoncherchetrigobottrouvercôté = côtéquoncherchetrigobottrouvercôté.get()
     côtéquonachoisitrigobottrouvercôté = côtéquonatrigobottrouvercôté.get()
     if choixcôtéquoncherchetrigobottrouvercôté[-2:] == côtéquonachoisitrigobottrouvercôté[-2:]:
-        messagebox.showwarning("Warning", "The side you have chosen corresponds to the one you have. Please change sides.")
+        messagebox.showwarning("Attention", "Le côté que vous avez choisi correspond à celui que vous avez. Veuillez changer de côté.")
         return
     boutonvalidercôtéquoncherchetrigobottrouvercôté.place_forget()
     menucôtéquoncherchetrigobottrouvercôté.bind("<Button-1>", lambda e: "break")
@@ -457,282 +459,282 @@ def validercôtéquoncherchetrigobottrouvercôté():
     entréecôtéquonatrigobottrouvercôté = entréelongueurcôtéquatrigobottrouvercôté.get()
     anglequonachoisitrigobottrouvercôté = anglequonatrigobottrouvercôté.get()
     choixentréeanglequonatrigobottrouvercôté = entréeanglequonatrigobottrouvercôté.get()
-    if angledroitchoisitrigobottrouvercôté == "Right angle : A":
-        if côtéquonachoisitrigobottrouvercôté == "Side we have : AB":
-            if anglequonachoisitrigobottrouvercôté == "Angle that we have : B":
-                if choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AC":
+    if angledroitchoisitrigobottrouvercôté == "Angle droit : A":
+        if côtéquonachoisitrigobottrouvercôté == "Côté qu'on a : AB":
+            if anglequonachoisitrigobottrouvercôté == "Angle qu'on a : B":
+                if choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AC":
                     angleautiliser1 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser1 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian1 = math.radians(angleautiliser1)
                     AC1trig = math.tan(angleradian1) * longueurautiliser1
                     AC1trig = round(AC1trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"BC = {AC1trig} cm")
-                elif choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : BC":
+                elif choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : BC":
                     angleautiliser2 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser2 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian2 = math.radians(angleautiliser2)
                     BC1trig = longueurautiliser2 / math.cos(angleradian2)
                     BC1trig = round(BC1trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"BC = {BC1trig} cm")
-            elif anglequonachoisitrigobottrouvercôté == "Angle we have : C":
-                if choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AC":
+            elif anglequonachoisitrigobottrouvercôté == "Angle qu'on a : C":
+                if choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AC":
                     angleautiliser3 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser3 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian3 = math.radians(angleautiliser3)
                     AC2trig = longueurautiliser3 / math.tan(angleradian3)
                     AC2trig = round(AC2trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AC = {AC2trig} cm")
-                elif choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : BC":
+                elif choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : BC":
                     angleautiliser4 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser4 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian4 = math.radians(angleautiliser4)
                     BC2trig = longueurautiliser4 / math.sin(angleradian4)
                     BC2trig = round(BC2trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"BC = {BC2trig} cm")
-        elif côtéquonachoisitrigobottrouvercôté == "Side we have : AC":
-            if anglequonachoisitrigobottrouvercôté == "Angle that we have : B":
-                if choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AB":
+        elif côtéquonachoisitrigobottrouvercôté == "Côté qu'on a : AC":
+            if anglequonachoisitrigobottrouvercôté == "Angle qu'on a : B":
+                if choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AB":
                     angleautiliser5 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser5 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian5 = math.radians(angleautiliser5)
                     AB1trig = longueurautiliser5 / math.tan(angleradian5)
                     AB1trig = round(AB1trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AB = {AB1trig} cm")
-                elif choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : BC":
+                elif choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : BC":
                     angleautiliser6 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser6 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian6 = math.radians(angleautiliser6)
                     BC3trig = longueurautiliser6 / math.sin(angleradian6)
                     BC3trig = round(BC1trig)
                     txtrésultattrigobottrouvercôté.config(text=f"BC = {BC3trig} cm")
-            elif anglequonachoisitrigobottrouvercôté == "Angle we have : C":
-                if choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AB":
+            elif anglequonachoisitrigobottrouvercôté == "Angle qu'on a : C":
+                if choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AB":
                     angleautiliser7 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser7 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian7 = math.radians(angleautiliser7)
                     AB2trig = longueurautiliser7 * math.tan(angleradian7)
                     AB2trig = round(AB2trig)
                     txtrésultattrigobottrouvercôté.config(text=f"AB = {AB2trig} cm")
-                elif choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : BC":
+                elif choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : BC":
                     angleautiliser8 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser8 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian8 = math.radians(angleautiliser8)
                     BC4trig=  longueurautiliser8 / math.cos(angleradian8)
                     BC4trig = round(BC4trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"BC = {BC4trig} cm")
-        elif côtéquonachoisitrigobottrouvercôté == "Side we have : BC":
-            if anglequonachoisitrigobottrouvercôté == "Angle that we have : B":
-                if choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AB":
+        elif côtéquonachoisitrigobottrouvercôté == "Côté qu'on a : BC":
+            if anglequonachoisitrigobottrouvercôté == "Angle qu'on a : B":
+                if choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AB":
                     angleautiliser9 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser9 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian9 = math.radians(angleautiliser9)
                     AB3trig = longueurautiliser9 * math.cos(angleradian9)
                     AB3trig = round(AB3trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AB = {AB3trig} cm")
-                elif choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AC":
+                elif choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AC":
                     angleatuiliser10 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser10 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian10 = math.radians(angleatuiliser10)
                     AC3trig = math.sin(angleradian10) * longueurautiliser10
                     AC3trig = round(AC3trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AC = {AC3trig} cm")
-            elif anglequonachoisitrigobottrouvercôté == "Angle we have : C":
-                if choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AB":
+            elif anglequonachoisitrigobottrouvercôté == "Angle qu'on a : C":
+                if choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AB":
                     angleatuiliser11 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser11 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian11 = math.radians(angleatuiliser11)
                     AB4trig = math.sin(angleradian11) * longueurautiliser11
                     AB4trig = round(AB4trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AB = {AB4trig} cm")
-                elif choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AC":
+                elif choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AC":
                     angleautiliser12 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser12 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian12 = math.radians(angleautiliser12)
                     AC4trig = math.cos(angleradian12) * longueurautiliser12
                     AC4trig = round(AC4trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AC = {AC4trig} cm")
-    elif angledroitchoisitrigobottrouvercôté == "Right angle : B":
-        if côtéquonachoisitrigobottrouvercôté == "Side we have : AB":
-            if anglequonachoisitrigobottrouvercôté == "Right angle : A":
-                if choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AC":
+    elif angledroitchoisitrigobottrouvercôté == "Angle droit : B":
+        if côtéquonachoisitrigobottrouvercôté == "Côté qu'on a : AB":
+            if anglequonachoisitrigobottrouvercôté == "Angle qu'on a : A":
+                if choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AC":
                     angleautiliser13 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser13 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian13 = math.radians(angleautiliser13)
                     AC5trig = longueurautiliser13 / math.cos(angleradian13)
                     AC5trig = round(AC5trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AC = {AC5trig} cm")
-                elif choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : BC":
+                elif choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : BC":
                     angleautiliser14 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser14 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian14 = math.radians(angleautiliser14)
                     BC5trig = math.tan(angleradian14) * longueurautiliser14
                     BC5trig = round(BC5trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"BC = {BC5trig} cm")
-            elif anglequonachoisitrigobottrouvercôté == "Angle we have : C":
-                if choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AC":
+            elif anglequonachoisitrigobottrouvercôté == "Angle qu'on a : C":
+                if choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AC":
                     angleautiliser15 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser15 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian15 = math.radians(angleautiliser15)
                     AC6trig = longueurautiliser15 / math.sin(angleradian15)
                     AC6trig = round(AC6trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AC = {AC6trig} cm")
-                elif choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : BC":
+                elif choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : BC":
                     angleautiliser16 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser16 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian16 = math.radians(angleautiliser16)
                     BC6trig = longueurautiliser16 / math.tan(angleradian16)
                     BC6trig = round(BC6trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"BC = {BC6trig} cm")
-        elif côtéquonachoisitrigobottrouvercôté == "Side we have : AC":
-            if anglequonachoisitrigobottrouvercôté == "Right angle : A":
-                if choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AB":
+        elif côtéquonachoisitrigobottrouvercôté == "Côté qu'on a : AC":
+            if anglequonachoisitrigobottrouvercôté == "Angle qu'on a : A":
+                if choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AB":
                     angleautiliser17 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser17 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian17 = math.radians(angleautiliser17)
                     AB5trig = longueurautiliser17 * math.cos(angleradian17)
                     AB5trig = round(AB5trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AB = {AB5trig} cm")
-                elif choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : BC":
+                elif choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : BC":
                     angleautiliser18 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser18 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian18 = math.radians(angleautiliser18)
                     BC7trig = longueurautiliser18 * math.sin(angleradian18)
                     BC7trig = round(BC7trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"BC = {BC7trig} cm")
-            elif anglequonachoisitrigobottrouvercôté == "Angle we have : C":
-                if choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AB":
+            elif anglequonachoisitrigobottrouvercôté == "Angle qu'on a : C":
+                if choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AB":
                     angleautiliser19 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser19 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian19 = math.radians(angleautiliser19)
                     AB6trig = longueurautiliser19 * math.sin(angleradian19)
                     AB6trig = round(AB6trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AB = {AB6trig} cm")
-                elif choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : BC":
+                elif choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : BC":
                     angleautiliser20 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser20 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian20 = math.radians(angleautiliser20)
                     BC8trig = longueurautiliser20 * math.cos(angleradian20)
                     BC8trig = round(BC8trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"BC = {BC8trig} cm")
-        elif côtéquonachoisitrigobottrouvercôté == "Side we have : BC":
-            if anglequonachoisitrigobottrouvercôté == "Right angle : A":
-                if choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AB":
+        elif côtéquonachoisitrigobottrouvercôté == "Côté qu'on a : BC":
+            if anglequonachoisitrigobottrouvercôté == "Angle qu'on a : A":
+                if choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AB":
                     angleautiliser21 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser21 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian21 = math.radians(angleautiliser21)
                     AB7trig = longueurautiliser21 / math.tan(angleradian21)
                     AB7trig = round(AB7trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AB = {AB7trig} cm")
-                elif choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AC":
+                elif choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AC":
                     angleautiliser22 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser22 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian22 = math.radians(angleautiliser22)
                     AC7trig = longueurautiliser22 / math.sin(angleradian22)
                     AC7trig = round(AC7trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AC = {AC7trig} cm")
-            elif anglequonachoisitrigobottrouvercôté == "Angle we have : C":
-                if choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AB":
+            elif anglequonachoisitrigobottrouvercôté == "Angle qu'on a : C":
+                if choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AB":
                     angleautiliser23 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser23 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian23 = math.radians(angleautiliser23)
                     AB8trig = longueurautiliser23 * math.tan(angleradian23)
                     AB8trig = round(AB8trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AB = {AB8trig} cm")
-                elif choixentréeanglequonatrigobottrouvercôté == "Side we are looking for : AC":
+                elif choixentréeanglequonatrigobottrouvercôté == "Côté qu'on cherche : AC":
                     angleautiliser24 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser24 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian24 = math.radians(angleautiliser24)
                     AC8trig = longueurautiliser24 / math.cos(angleradian24)
                     AC8trig = round(AC8trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AC = {AC8trig} cm")
-    elif angledroitchoisitrigobottrouvercôté == "Right angle : C":
-        if côtéquonachoisitrigobottrouvercôté == "Side we have : AB":
-            if anglequonachoisitrigobottrouvercôté == "Right angle : A":
-                if choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AC":
+    elif angledroitchoisitrigobottrouvercôté == "Angle droit : C":
+        if côtéquonachoisitrigobottrouvercôté == "Côté qu'on a : AB":
+            if anglequonachoisitrigobottrouvercôté == "Angle qu'on a : A":
+                if choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AC":
                     angleautiliser25 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser25 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian25 = math.radians(angleautiliser25)
                     AC9trig = longueurautiliser25 * math.cos(angleradian25)
                     AC9trig = round(AC9trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AC = {AC9trig} cm")
-                elif choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : BC":
+                elif choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : BC":
                     angleautiliser26 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser26 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian26 = math.radians(angleautiliser26)
                     BC9trig = longueurautiliser26 * math.sin(angleradian26)
                     BC9trig = round(BC9trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"BC = {BC9trig} cm")
-            elif anglequonachoisitrigobottrouvercôté == "Angle that we have : B":
-                if choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AC":
+            elif anglequonachoisitrigobottrouvercôté == "Angle qu'on a : B":
+                if choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AC":
                     angleautiliser27 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser27 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian27 = math.radians(angleautiliser27)
                     AC10trig = longueurautiliser27 * math.sin(angleradian27)
                     AC10trig = round(AC10trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AC = {AC10trig} cm")
-                elif choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : BC":
+                elif choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : BC":
                     angleautiliser28 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser28 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian28 = math.radians(angleautiliser28)
                     BC10trig = longueurautiliser28 * math.cos(angleradian28)
                     BC10trig = round(BC10trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"BC = {BC10trig} cm")
-        elif côtéquonachoisitrigobottrouvercôté == "Side we have : AC":
-            if anglequonachoisitrigobottrouvercôté == "Right angle : A":
-                if choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AB":
+        elif côtéquonachoisitrigobottrouvercôté == "Côté qu'on a : AC":
+            if anglequonachoisitrigobottrouvercôté == "Angle qu'on a : A":
+                if choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AB":
                     angleautiliser29 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser29 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian29 = math.radians(angleautiliser29)
                     AB9trig = longueurautiliser29 / math.cos(angleradian29)
                     AB9trig = round(AB9trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AB = {AB9trig} cm")
-                elif choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : BC":
+                elif choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : BC":
                     angleautiliser30 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser30 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian30 = math.radians(angleautiliser30)
                     BC11trig = longueurautiliser30 * math.tan(angleradian30)
                     BC11trig = round(BC11trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"BC = {BC11trig} cm")
-            elif anglequonachoisitrigobottrouvercôté == "Angle that we have : B":
-                if choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AB":
+            elif anglequonachoisitrigobottrouvercôté == "Angle qu'on a : B":
+                if choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AB":
                     angleautiliser31 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser31 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian31 = math.radians(angleautiliser31)
                     AB10trig = longueurautiliser31 / math.sin(angleradian31)
                     AB10trig = round(AB10trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AB = {AB10trig} cm")
-                elif choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : BC":
+                elif choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : BC":
                     angleautiliser32 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser32 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian32 = math.radians(angleautiliser32)
                     BC12trig = longueurautiliser32 / math.tan(angleradian32)
                     BC12trig = round(BC12trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"BC = {BC12trig} cm")
-        elif côtéquonachoisitrigobottrouvercôté == "Side we have : BC":
-            if anglequonachoisitrigobottrouvercôté == "Right angle : A":
-                if choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AB":
+        elif côtéquonachoisitrigobottrouvercôté == "Côté qu'on a : BC":
+            if anglequonachoisitrigobottrouvercôté == "Angle qu'on a : A":
+                if choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AB":
                     angleautiliser33 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser33 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian33 = math.radians(angleautiliser33)
                     AB11trig = longueurautiliser33 / math.sin(angleradian33)
                     AB11trig = round(AB11trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AB = {AB11trig} cm")
-                elif choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AC":
+                elif choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AC":
                     angleautiliser34 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser34 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian34 = math.radians(angleautiliser34)
                     AC11trig = longueurautiliser34 / math.tan(angleradian34)
                     AC11trig = round(AC11trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AC = {AC11trig} cm")
-            elif anglequonachoisitrigobottrouvercôté == "Angle that we have : B":
-                if choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AB":
+            elif anglequonachoisitrigobottrouvercôté == "Angle qu'on a : B":
+                if choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AB":
                     angleautiliser35 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser35 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian35 = math.radians(angleautiliser35)
                     AB12trig = longueurautiliser35 / math.cos(angleradian35)
                     AB12trig = round(AB12trig, 4)
                     txtrésultattrigobottrouvercôté.config(text=f"AB = {AB12trig} cm")
-                elif choixcôtéquoncherchetrigobottrouvercôté == "Side we are looking for : AC":
+                elif choixcôtéquoncherchetrigobottrouvercôté == "Côté qu'on cherche : AC":
                     angleautiliser36 = float(choixentréeanglequonatrigobottrouvercôté)
                     longueurautiliser36 = float(entréecôtéquonatrigobottrouvercôté)
                     angleradian36 = math.radians(angleautiliser36)
@@ -811,7 +813,7 @@ def validerentréepremiercôtétrigobottrouverangle():
     try:
         float(entrée1ercôtéquonatrigobottrouvercôté)
     except ValueError:
-        messagebox.showwarning("Warning", "Unencrypted input. Try again")
+        messagebox.showwarning("Attention", "Entrée non chiffrée. Réessayer")
         entréelongueurpremiercôtéquonatrigobottrouverangle.delete(0, tk.END)
         entréelongueurpremiercôtéquonatrigobottrouverangle.focus()
         return
@@ -820,7 +822,7 @@ def validerentréepremiercôtétrigobottrouverangle():
     entréelongueurpremiercôtéquonatrigobottrouverangle.config(state="disabled")
     menudeuxièmecôtéquonatrigobottrouverangle.place(x=585, y=152)
     menudeuxièmecôtéquonatrigobottrouverangle.update_idletasks()
-    txtégaldeuxièmecôtéquonatrigobottrouverangle.place(x=760, y=149)
+    txtégaldeuxièmecôtéquonatrigobottrouverangle.place(x=755, y=149)
     txtégaldeuxièmecôtéquonatrigobottrouverangle.update_idletasks()
     boutonvaliderdeuxièmecôtétrigobottrouverangle.place(x=770, y=185)
     boutonvaliderdeuxièmecôtétrigobottrouverangle.update_idletasks()
@@ -833,13 +835,13 @@ def validerentréedeuxièmecôtétrigobottrouvercôté():
     premiercôtéquonachoisitrigobottrouverangle = premiercôtéquonatrigobottrouverangle.get()    
     deuxièmecôtéquonachoisitrigobottrouverangle = deuxièmecôtéquonatrigobottrouverangle.get()
     if deuxièmecôtéquonachoisitrigobottrouverangle[-2:] == premiercôtéquonachoisitrigobottrouverangle[-2:]:
-        messagebox.showwarning("Warning", "The chosen side is the same as the first. Try again")
+        messagebox.showwarning("Attention", "Le côté choisi est le même que le premier. Réessayer")
         return
     entréechoisiedeuxièmecôtétrigobottrouverangle = entréedeuxièmecôtétrigobottrouverangle.get()
     try:
         float(entréechoisiedeuxièmecôtétrigobottrouverangle)
     except ValueError:
-        messagebox.showwarning("Warning", "Unencrypted input. Try again")
+        messagebox.showwarning("Attention", "Entrée non chiffrée. Réessayer")
         entréedeuxièmecôtétrigobottrouverangle.delete(0, tk.END)
         entréedeuxièmecôtétrigobottrouverangle.focus()
         return
@@ -859,7 +861,7 @@ def valideranglequoncherchetrigobottrouverangle():
     angledroitchoisitrigobottrouverangle = angledroittrigobottrouverangle.get()
     anglequoncherchechoisitrigobottrouverangle = anglequoncherchetrigobottrouverangle.get()
     if angledroitchoisitrigobottrouverangle[-1:] == anglequoncherchechoisitrigobottrouverangle[-1:]:
-        messagebox.showwarning("Warning", "The chosen angle is the same as the right angle. Try again")
+        messagebox.showwarning("Attention", "L'angle choisi est le même que l'angle droit. Réessayer")
         return
     menuanglequoncherchetrigobottrouverangle.bind("<Button-1>", lambda e:"break")
     boutonvalideranglequoncherchetrigobottrouverangle.place_forget()
@@ -1078,72 +1080,72 @@ MathRobot = tk.Tk()
 MathRobot.title("MathRobot")
 MathRobot.geometry("1000x800")
 
-txtmathrobot = tk.Label(MathRobot, text="Welcome to MathRobot!", font=("Digital-7", 20, "bold"), fg="red")
+txtmathrobot = tk.Label(MathRobot, text="Bienvenue sur MathRobot !", font=("Digital-7", 20, "bold"), fg="red")
 txtmathrobot.place(x=400, y=15)
 
-descriptionbrève = tk.Label(MathRobot, text="MathRobot is a robot that performs different mathematical functions.", font=("Arial", 15, "italic"))
+descriptionbrève = tk.Label(MathRobot, text="MathRobot, c'est un robot qui exécute différentes fonctions mathématiques", font=("Arial", 15, "italic"))
 descriptionbrève.place(x=250, y=50)
 
-selectionsousrobot = tk.Label(MathRobot, text="Click on what you want to do :", font=("Arial", 15, "italic"))
+selectionsousrobot = tk.Label(MathRobot, text="Clique sur ce que tu veux faire :", font=("Arial", 15, "italic"))
 selectionsousrobot.place(x=395, y=85)
 
-boutonpythagore = tk.Button(MathRobot, text="Pythagoras", command=lancerpythagore, fg="blue")
+boutonpythagore = tk.Button(MathRobot, text="Pythagore", command=lancerpythagore, fg="blue")
 boutonpythagore.place(x=355, y=135)
 
-txtpythrobot = tk.Label(MathRobot, text="Welcome to PythRobot !", font=("Digital-7", 20, "bold"), fg="red")
+txtpythrobot = tk.Label(MathRobot, text="Bienvenue sur PythRobot !", font=("Digital-7", 20, "bold"), fg="red")
 txtpythrobot.place(x=400, y=15)
 txtpythrobot.place_forget()
 
-boutontrigonométrie = tk.Button(MathRobot, text="Trigonometry", command=lancertrigonométrie, fg="blue")
+boutontrigonométrie = tk.Button(MathRobot, text="Trigonométrie", command=lancertrigonométrie, fg="blue")
 boutontrigonométrie.place(x=507, y=135)
 
-txttrigobot = tk.Label(MathRobot, text="Welcome to TrigoBot !", font=("Digital-7", 20, "bold"), fg="red")
+txttrigobot = tk.Label(MathRobot, text="Bienvenue sur TrigoBot !", font=("Digital-7", 20, "bold"), fg="red")
 txttrigobot.place(x=400, y=15)
 txttrigobot.place_forget()
 
-boutonpythrobottrouvercôté = tk.Button(MathRobot, text="Find the length of a side", command=trouverlalongueurduncôté, fg="green")
+boutonpythrobottrouvercôté = tk.Button(MathRobot, text="Trouver la longueur d'un côté", command=trouverlalongueurduncôté, fg="green")
 boutonpythrobottrouvercôté.place(x=270, y=135)
 boutonpythrobottrouvercôté.place_forget()
 
-boutonpythrobottrouverrectangularité = tk.Button(MathRobot, text="Find out if a triangle is right-angled", command=trouversiuntriangleestrectangle, fg="green")
+boutonpythrobottrouverrectangularité = tk.Button(MathRobot, text="Trouver si un triangle est rectangle", command=trouversiuntriangleestrectangle, fg="green")
 boutonpythrobottrouverrectangularité.place(x=500, y=135)
 boutonpythrobottrouverrectangularité.place_forget()
 
-boutonquitterpythrobot = tk.Button(MathRobot, text="Quit PythRobot", command=quitterpythrobot, fg="red")
+boutonquitterpythrobot = tk.Button(MathRobot, text="Quitter PythRobot", command=quitterpythrobot, fg="red")
 boutonquitterpythrobot.place(x=800, y=735)
 boutonquitterpythrobot.place_forget()
 
-txtdebienvenuepythrobotdescription = tk.Label(MathRobot, text="You are on PythRobot. It performs the Pythagorean theorem on a triangle ABC", font=("Arial", 15, "italic"))
+txtdebienvenuepythrobotdescription = tk.Label(MathRobot, text="Tu es sur PythRobot. Il exécute le théorème de Pythagore sur un triangle ABC", font=("Arial", 15, "italic"))
 txtdebienvenuepythrobotdescription.place(x=245, y=50)
 txtdebienvenuepythrobotdescription.place_forget()
 
-selectionpythrobotaction = tk.Label(MathRobot, text="Choose which option of the theorem you want to perform", font=("Arial", 15, "italic"))
+selectionpythrobotaction = tk.Label(MathRobot, text="Choisis quelle option du théorème tu veux effectuer", font=("Arial", 15, "italic"))
 selectionpythrobotaction.place(x=335, y=85)
 selectionpythrobotaction.place_forget()
 
 angledroitchoisipythrobottrouvermesurelongueur = tk.StringVar()
-angledroitchoisipythrobottrouvermesurelongueur.set("Right angle : A")
+angledroitchoisipythrobottrouvermesurelongueur.set("Angle droit : A")
 
-menuangledroitpythrobottrouvermesurelongueur = tk.OptionMenu(MathRobot, angledroitchoisipythrobottrouvermesurelongueur, "Right angle : A", "Right angle : B", "Right angle : C")
+menuangledroitpythrobottrouvermesurelongueur = tk.OptionMenu(MathRobot, angledroitchoisipythrobottrouvermesurelongueur, "Angle droit : A", "Angle droit : B", "Angle droit : C")
 menuangledroitpythrobottrouvermesurelongueur.place(x=100, y=150)
 menuangledroitpythrobottrouvermesurelongueur.place_forget()
 
-txtdescriptionpythrobottrouvermesurecôté = tk.Label(MathRobot, text="Select the right angle, validate, then select the length\nto find, validate and finally, enter the lengths of the sides in\nthe spaces provided for this purpose before validating.", font=("Arial", 15, "italic"))
+txtdescriptionpythrobottrouvermesurecôté = tk.Label(MathRobot, text="Sélectionne l'angle droit, valide, puis sélectionne la longueur\nà trouver, valide et enfin, entre les longueur des côtés dans\nles espaces prévus à cet effet avant de valider.", font=("Arial", 15, "italic"))
 txtdescriptionpythrobottrouvermesurecôté.place(x=300, y=50)
 txtdescriptionpythrobottrouvermesurecôté.place_forget()
 
-boutonvaliderchoixangledroitpythrobottrouvermesurelongueur = tk.Button(MathRobot, text="Validate", command=validerangledroitpythrobottrouvercôté, fg="black")
+boutonvaliderchoixangledroitpythrobottrouvermesurelongueur = tk.Button(MathRobot, text="Valider", command=validerangledroitpythrobottrouvercôté, fg="black")
 boutonvaliderchoixangledroitpythrobottrouvermesurelongueur.place(x=120, y=185)
 boutonvaliderchoixangledroitpythrobottrouvermesurelongueur.place_forget()
 
 côtéquoncherchepythrobot = tk.StringVar()
-côtéquoncherchepythrobot.set("Side we are looking for : AB")
+côtéquoncherchepythrobot.set("Côté qu'on cherche : AB")
 
-menucôtéquoncherchepythrobot = tk.OptionMenu(MathRobot, côtéquoncherchepythrobot, "Side we are looking for : AB", "Side we are looking for : AC", "Side we are looking for : BC")
+menucôtéquoncherchepythrobot = tk.OptionMenu(MathRobot, côtéquoncherchepythrobot, "Côté qu'on cherche : AB", "Côté qu'on cherche : AC", "Côté qu'on cherche : BC")
 menucôtéquoncherchepythrobot.place(x=400, y=150)
 menucôtéquoncherchepythrobot.place_forget()
 
-boutonvalidercôtéquoncherchepythrobot = tk.Button(MathRobot, text="Validate", command=validercôtéquoncherchepythrobot, fg="black")
+boutonvalidercôtéquoncherchepythrobot = tk.Button(MathRobot, text="Valider", command=validercôtéquoncherchepythrobot, fg="black")
 boutonvalidercôtéquoncherchepythrobot.place(x=450, y=185)
 boutonvalidercôtéquoncherchepythrobot.place_forget()
 
@@ -1179,7 +1181,7 @@ txtBCcôtéhautentrée2pythrobottrouvercôté = tk.Label(MathRobot, text="BC =",
 txtBCcôtéhautentrée2pythrobottrouvercôté.place(x=710, y=165)
 txtBCcôtéhautentrée2pythrobottrouvercôté.place_forget()
 
-boutonvaliderentréescôtéspythrobottrouvercôté = tk.Button(MathRobot, text="Validate", command=validerentréescôtéspythrobottrouvercôté, fg="black")
+boutonvaliderentréescôtéspythrobottrouvercôté = tk.Button(MathRobot, text="Valider", command=validerentréescôtéspythrobottrouvercôté, fg="black")
 boutonvaliderentréescôtéspythrobottrouvercôté.place(x=800, y=200)
 boutonvaliderentréescôtéspythrobottrouvercôté.place_forget()
 
@@ -1195,7 +1197,7 @@ txtBCrésultatcôtépythrobottrouvercôté = tk.Label(MathRobot, text="BC =" + s
 txtBCrésultatcôtépythrobottrouvercôté.place(x=350, y=250)
 txtBCrésultatcôtépythrobottrouvercôté.place_forget()
 
-boutonquitteraprèsavoirtrouvécôtépythrobot = tk.Button(MathRobot, text="Return to the Pythrobot menu", command=revenirmenupythrobotaprèstrouvécôté, fg="red")
+boutonquitteraprèsavoirtrouvécôtépythrobot = tk.Button(MathRobot, text="Revenir au menu de Pythrobot", command=revenirmenupythrobotaprèstrouvécôté, fg="red")
 boutonquitteraprèsavoirtrouvécôtépythrobot.place(x=750, y=735)
 boutonquitteraprèsavoirtrouvécôtépythrobot.place_forget()
 
@@ -1235,11 +1237,11 @@ txtcmBCégalpythrobotrectangularité = tk.Label(MathRobot, text="cm", font=("Ari
 txtcmBCégalpythrobotrectangularité.place(x=922, y=150)
 txtcmBCégalpythrobotrectangularité.place_forget()
 
-txtdescriptionpythrobotrectangularité = tk.Label(MathRobot, text="Enter the lengths of AB, AC and BC, then validate.", font=("Arial", 15, "italic"))
+txtdescriptionpythrobotrectangularité = tk.Label(MathRobot, text="Entre les longueurs de AB, AC et BC, puis valide.", font=("Arial", 15, "italic"))
 txtdescriptionpythrobotrectangularité.place(x=350, y=75)
 txtdescriptionpythrobotrectangularité.place_forget()
 
-boutonvaliderentréescôtéspythrobotrectangularité = tk.Button(MathRobot, text="Validate", command=validerentréescôtéspythrobotrectangularité, fg="black")
+boutonvaliderentréescôtéspythrobotrectangularité = tk.Button(MathRobot, text="Valider", command=validerentréescôtéspythrobotrectangularité, fg="black")
 boutonvaliderentréescôtéspythrobotrectangularité.place(x=445, y=200)
 boutonvaliderentréescôtéspythrobotrectangularité.place_forget()
 
@@ -1247,99 +1249,99 @@ txtsirectangleoupaspythrobotrectanglarité = tk.Label(MathRobot, text="0", font=
 txtsirectangleoupaspythrobotrectanglarité.place(x=350, y=250)
 txtsirectangleoupaspythrobotrectanglarité.place_forget()
 
-boutonquitterrectangularitépythrobot = tk.Button(MathRobot, text="Return to the PyhtRobot menu", command=revenirmenupythrobotaprèsrectangularité, fg="red")
+boutonquitterrectangularitépythrobot = tk.Button(MathRobot, text="Revenir au menu de PyhtRobot", command=revenirmenupythrobotaprèsrectangularité, fg="red")
 boutonquitterrectangularitépythrobot.place(x=750, y=735)
 boutonquitterrectangularitépythrobot.place_forget()
 
-boutontrigobottrouvercôté = tk.Button(MathRobot, text="Find the length of a side", command=trouvercôtétrigobot, fg="green")
+boutontrigobottrouvercôté = tk.Button(MathRobot, text="Trouver la longueur d'un côté", command=trouvercôtétrigobot, fg="green")
 boutontrigobottrouvercôté.place(x=270, y=135)
 boutontrigobottrouvercôté.place_forget()
 
-boutontrigobottrouverangle = tk.Button(MathRobot, text="Find the measure of an angle", command=trouverangletrigobot, fg="green")
+boutontrigobottrouverangle = tk.Button(MathRobot, text="Trouver la mesure d'un angle", command=trouverangletrigobot, fg="green")
 boutontrigobottrouverangle.place(x=500, y=135)
 boutontrigobottrouverangle.place_forget()
 
-txttrigobotdesciption = tk.Label(MathRobot, text="You are on Trigobot. It performs trigonometric functions on a triangle ABC.", font=("Arial", 15, "italic"))
+txttrigobotdesciption = tk.Label(MathRobot, text="Tu es sur Trigobot. Il exécute les fonctions trigonométriques sur un triangle ABC.", font=("Arial", 15, "italic"))
 txttrigobotdesciption.place(x=250, y=50)
 txttrigobotdesciption.place_forget()
 
-selectiontrigobotaction = tk.Label(MathRobot, text="Choose which trigonometry option you want to do", font=("Arial", 15, "italic"))
+selectiontrigobotaction = tk.Label(MathRobot, text="Choisis quelle option de la trigonométrie tu veux effectuer", font=("Arial", 15, "italic"))
 selectiontrigobotaction.place(x=310, y=85)
 selectiontrigobotaction.place_forget()
 
-boutonquittertrigobot = tk.Button(MathRobot, text="Quit TrigoBot", command=quitterTrigoBot, fg="red")
+boutonquittertrigobot = tk.Button(MathRobot, text="Quitter TrigoBot", command=quitterTrigoBot, fg="red")
 boutonquittertrigobot.place(x=810, y=735)
 boutonquittertrigobot.place_forget()
 
-txtdescriptiontrigobottrouvercôté = tk.Label(MathRobot, text="Enter the name of the right angle, validate, then enter the name of the side\nyou have then its length, validate, enter the name of the angle\nyou have, then its measure and validate, finally, enter\nthe name of the side you are looking for and validate", font=("Arial", 15, "italic"))
+txtdescriptiontrigobottrouvercôté = tk.Label(MathRobot, text="Entre le nom de l'angle droit, valide, puis entre le nom du côté\nque tu as puis sa longueur, valide, entre le nom de l'angle\nque tu as, puis sa mesure et valide, enfin, entre\nle nom du côté que tu cherches et valide", font=("Arial", 15, "italic"))
 txtdescriptiontrigobottrouvercôté.place(x=290, y=50)
 txtdescriptiontrigobottrouvercôté.place_forget()
 
 angledroittriangletrigobottrouvercôté = tk.StringVar()
-angledroittriangletrigobottrouvercôté.set("Right angle : A")
+angledroittriangletrigobottrouvercôté.set("Angle droit : A")
 
-menuangledroittigobottrouvercôté = tk.OptionMenu(MathRobot, angledroittriangletrigobottrouvercôté, "Right angle : A", "Right angle : B", "Right angle : C")
-menuangledroittigobottrouvercôté.place(x=20, y=150)
+menuangledroittigobottrouvercôté = tk.OptionMenu(MathRobot, angledroittriangletrigobottrouvercôté, "Angle droit : A", "Angle droit : B", "Angle droit : C")
+menuangledroittigobottrouvercôté.place(x=40, y=150)
 menuangledroittigobottrouvercôté.place_forget()
 
-boutonvaliderangledroitrigobottrouvercôté = tk.Button(MathRobot, text="Validate", command=validerangledroittrigobottrouvercôté, fg="black")
-boutonvaliderangledroitrigobottrouvercôté.place(x=40, y=185)
+boutonvaliderangledroitrigobottrouvercôté = tk.Button(MathRobot, text="Valider", command=validerangledroittrigobottrouvercôté, fg="black")
+boutonvaliderangledroitrigobottrouvercôté.place(x=60, y=185)
 boutonvaliderangledroitrigobottrouvercôté.place_forget()
 
 côtéquonatrigobottrouvercôté = tk.StringVar()
-côtéquonatrigobottrouvercôté.set("Side we have : AB")
+côtéquonatrigobottrouvercôté.set("Côté qu'on a : AB")
 
-menucôtéquonatrigobottrouvercôté = tk.OptionMenu(MathRobot, côtéquonatrigobottrouvercôté, "Side we have : AB", "Side we have : AC", "Side we have : BC")
-menucôtéquonatrigobottrouvercôté.place(x=185, y=150)
+menucôtéquonatrigobottrouvercôté = tk.OptionMenu(MathRobot, côtéquonatrigobottrouvercôté, "Côté qu'on a : AB", "Côté qu'on a : AC", "Côté qu'on a : BC")
+menucôtéquonatrigobottrouvercôté.place(x=205, y=150)
 menucôtéquonatrigobottrouvercôté.place_forget()
 
-boutonvalidercôtéquatrigobottrouvercôtéaveclongueur = tk.Button(MathRobot, text="Validate", command=validercôtéquonatrigobottrouvercôtéaveclongueur, fg="black")
-boutonvalidercôtéquatrigobottrouvercôtéaveclongueur.place(x=370, y=185)
+boutonvalidercôtéquatrigobottrouvercôtéaveclongueur = tk.Button(MathRobot, text="Valider", command=validercôtéquonatrigobottrouvercôtéaveclongueur, fg="black")
+boutonvalidercôtéquatrigobottrouvercôtéaveclongueur.place(x=390, y=185)
 boutonvalidercôtéquatrigobottrouvercôtéaveclongueur.place_forget()
 
 entréelongueurcôtéquatrigobottrouvercôté = tk.Entry(MathRobot, font=("Arial"))
-entréelongueurcôtéquatrigobottrouvercôté.place(x=360, y=149.5)
+entréelongueurcôtéquatrigobottrouvercôté.place(x=380, y=149.5)
 entréelongueurcôtéquatrigobottrouvercôté.place_forget()
 
 txtégalcôtéquonatrigobottrouvercôté = tk.Label(MathRobot, text="=", font=("Arial", 17))
-txtégalcôtéquonatrigobottrouvercôté.place(x=340, y=148.5)
+txtégalcôtéquonatrigobottrouvercôté.place(x=360, y=148.5)
 txtégalcôtéquonatrigobottrouvercôté.place_forget()
 
 txtcmcôtéquonatrigobottrouvercôté = tk.Label(MathRobot, text="cm", font=("Arial", 17))
-txtcmcôtéquonatrigobottrouvercôté.place(x=535, y=148)
+txtcmcôtéquonatrigobottrouvercôté.place(x=555, y=148)
 txtcmcôtéquonatrigobottrouvercôté.place_forget()
 
 anglequonatrigobottrouvercôté = tk.StringVar()
-anglequonatrigobottrouvercôté.set("Angle that we have : B")
+anglequonatrigobottrouvercôté.set("Angle qu'on a : B")
 
-menuanglequonatrigobottrouvercôté = tk.OptionMenu(MathRobot, anglequonatrigobottrouvercôté, "Angle that we have : A", "Angle that we have : B", "Angle that we have : C")
-menuanglequonatrigobottrouvercôté.place(x=585, y=148.5)
+menuanglequonatrigobottrouvercôté = tk.OptionMenu(MathRobot, anglequonatrigobottrouvercôté, "Angle qu'on a : A", "Angle qu'on a : B", "Angle qu'on a : C")
+menuanglequonatrigobottrouvercôté.place(x=605, y=148.5)
 menuanglequonatrigobottrouvercôté.place_forget()
 
-boutonvalideranglequonatrigobottrouvercôté = tk.Button(MathRobot, text="Validate", command=valideranglequonatrigobottrouvercôté, fg="black")
-boutonvalideranglequonatrigobottrouvercôté.place(x=740, y=185)
+boutonvalideranglequonatrigobottrouvercôté = tk.Button(MathRobot, text="Valider", command=valideranglequonatrigobottrouvercôté, fg="black")
+boutonvalideranglequonatrigobottrouvercôté.place(x=790, y=185)
 boutonvalideranglequonatrigobottrouvercôté.place_forget()
 
 entréeanglequonatrigobottrouvercôté = tk.Entry(MathRobot, font=("Arial"))
-entréeanglequonatrigobottrouvercôté.place(x=790, y=147.5)
+entréeanglequonatrigobottrouvercôté.place(x=780, y=147.5)
 entréeanglequonatrigobottrouvercôté.place_forget()
 
 txtégalanglequonatrigobottrouvercôté = tk.Label(MathRobot, text="=", font=("Arial", 17))
-txtégalanglequonatrigobottrouvercôté.place(x=710, y=147.5)
+txtégalanglequonatrigobottrouvercôté.place(x=760, y=147.5)
 txtégalanglequonatrigobottrouvercôté.place_forget()
 
 txtdegréanglequonatrigobottrouvercôté = tk.Label(MathRobot, text="°", font=("Arial", 17))
-txtdegréanglequonatrigobottrouvercôté.place(x=965, y=147.5)
+txtdegréanglequonatrigobottrouvercôté.place(x=955, y=147.5)
 txtdegréanglequonatrigobottrouvercôté.place_forget()
 
 côtéquoncherchetrigobottrouvercôté = tk.StringVar()
-côtéquoncherchetrigobottrouvercôté.set("Side we are looking for : AC")
+côtéquoncherchetrigobottrouvercôté.set("Côté qu'on cherche : AC")
 
-menucôtéquoncherchetrigobottrouvercôté = tk.OptionMenu(MathRobot, côtéquoncherchetrigobottrouvercôté, "Side we are looking for : AB", "Side we are looking for : AC", "Side we are looking for : BC")
+menucôtéquoncherchetrigobottrouvercôté = tk.OptionMenu(MathRobot, côtéquoncherchetrigobottrouvercôté, "Côté qu'on cherche : AB", "Côté qu'on cherche : AC", "Côté qu'on cherche : BC")
 menucôtéquoncherchetrigobottrouvercôté.place(x=400, y=225)
 menucôtéquoncherchetrigobottrouvercôté.place_forget()
 
-boutonvalidercôtéquoncherchetrigobottrouvercôté = tk.Button(MathRobot, text="Validate", command=validercôtéquoncherchetrigobottrouvercôté, fg="black")
+boutonvalidercôtéquoncherchetrigobottrouvercôté = tk.Button(MathRobot, text="Valider", command=validercôtéquoncherchetrigobottrouvercôté, fg="black")
 boutonvalidercôtéquoncherchetrigobottrouvercôté.place(x=455, y=260)
 boutonvalidercôtéquoncherchetrigobottrouvercôté.place_forget()
 
@@ -1347,29 +1349,29 @@ txtrésultattrigobottrouvercôté = tk.Label(MathRobot, text="", font=("Arial", 
 txtrésultattrigobottrouvercôté.place(x=450, y=300)
 txtrésultattrigobottrouvercôté.place_forget()
 
-boutonquitteraprèstrouvécôtétrigobot = tk.Button(MathRobot, text="Return to the Trigobot menu", command=quitteraprèstrouvécôté, fg="red")
+boutonquitteraprèstrouvécôtétrigobot = tk.Button(MathRobot, text="Revenir au menu de Trigobot", command=quitteraprèstrouvécôté, fg="red")
 boutonquitteraprèstrouvécôtétrigobot.place(x=750, y=735)
 boutonquitteraprèstrouvécôtétrigobot.place_forget()
 
-txtdescriptiontrigobottrouverangle = tk.Label(MathRobot, text="Choose the right angle, valid, enter the name of the 1st side you have\nthen its length, valid, enter the name of the 2nd side you have\nthen its length, valid, finally, enter the name of the angle you\nare looking for and validate", font=("Arial", 15, "italic"))
+txtdescriptiontrigobottrouverangle = tk.Label(MathRobot, text="Choisis l'angle droit, valide, entre le nom du 1er côté que tu as\npuis sa longueur, valide, entre le nom du 2e côté que tu as\npuis sa longueur, valide, enfin, entre le nom de l'angle que tu\ncherche et valide", font=("Arial", 15, "italic"))
 txtdescriptiontrigobottrouverangle.place(x=283, y=50)
 txtdescriptiontrigobottrouverangle.place_forget()
 
 angledroittrigobottrouverangle = tk.StringVar()
-angledroittrigobottrouverangle.set("Right angle : A")
+angledroittrigobottrouverangle.set("Angle droit : A")
 
-menuangledroittrigobottrouverangle = tk.OptionMenu(MathRobot, angledroittrigobottrouverangle, "Right angle : A", "Right angle : B", "Right angle : C")
+menuangledroittrigobottrouverangle = tk.OptionMenu(MathRobot, angledroittrigobottrouverangle, "Angle droit : A", "Angle droit : B", "Angle droit : C")
 menuangledroittrigobottrouverangle.place(x=20, y=150)
 menuangledroittrigobottrouverangle.place_forget()
 
-boutonvaliderangledroitrigobottrouverangle = tk.Button(MathRobot, text="Validate", command=validerangledroittrigobottrouverangle, fg="black")
+boutonvaliderangledroitrigobottrouverangle = tk.Button(MathRobot, text="Valider", command=validerangledroittrigobottrouverangle, fg="black")
 boutonvaliderangledroitrigobottrouverangle.place(x=40, y=185)
 boutonvaliderangledroitrigobottrouverangle.place_forget()
 
 premiercôtéquonatrigobottrouverangle = tk.StringVar()
-premiercôtéquonatrigobottrouverangle.set("1er Side we have : AB")
+premiercôtéquonatrigobottrouverangle.set("1er côté qu'on a : AB")
 
-menupremiercôtéquonatrigobottrouverangle = tk.OptionMenu(MathRobot, premiercôtéquonatrigobottrouverangle, "1er Side we have : AB", "1er Side we have : AC", "1er Side we have : BC")
+menupremiercôtéquonatrigobottrouverangle = tk.OptionMenu(MathRobot, premiercôtéquonatrigobottrouverangle, "1er côté qu'on a : AB", "1er côté qu'on a : AC", "1er côté qu'on a : BC")
 menupremiercôtéquonatrigobottrouverangle.place(x=170, y=150)
 menupremiercôtéquonatrigobottrouverangle.place_forget()
 
@@ -1385,19 +1387,19 @@ txtcmlongueurpremiercôtéquonatrigobottrouverangle = tk.Label(MathRobot, text="
 txtcmlongueurpremiercôtéquonatrigobottrouverangle.place(x=540, y=150)
 txtcmlongueurpremiercôtéquonatrigobottrouverangle.place_forget()
 
-boutonvaliderentréepremiercôtétrigobottrouverangle = tk.Button(MathRobot, text="Validate", command=validerentréepremiercôtétrigobottrouverangle, fg="black")
+boutonvaliderentréepremiercôtétrigobottrouverangle = tk.Button(MathRobot, text="Valider", command=validerentréepremiercôtétrigobottrouverangle, fg="black")
 boutonvaliderentréepremiercôtétrigobottrouverangle.place(x=370, y=185)
 boutonvaliderentréepremiercôtétrigobottrouverangle.place_forget()
 
 deuxièmecôtéquonatrigobottrouverangle = tk.StringVar()
-deuxièmecôtéquonatrigobottrouverangle.set("2e Side we have : AC")
+deuxièmecôtéquonatrigobottrouverangle.set("2e côté qu'on a : AC")
 
-menudeuxièmecôtéquonatrigobottrouverangle = OptionMenu(MathRobot, deuxièmecôtéquonatrigobottrouverangle, "2e Side we have : AB", "2e Side we have : AC", "2e Side we have : BC")
+menudeuxièmecôtéquonatrigobottrouverangle = OptionMenu(MathRobot, deuxièmecôtéquonatrigobottrouverangle, "2e côté qu'on a : AB", "2e côté qu'on a : AC", "2e côté qu'on a : BC")
 menudeuxièmecôtéquonatrigobottrouverangle.place(x=585, y=152)
 menudeuxièmecôtéquonatrigobottrouverangle.place_forget()
 
 txtégaldeuxièmecôtéquonatrigobottrouverangle = tk.Label(MathRobot, text="=", font=("Arial", 17))
-txtégaldeuxièmecôtéquonatrigobottrouverangle.place(x=760, y=149)
+txtégaldeuxièmecôtéquonatrigobottrouverangle.place(x=755, y=149)
 txtégaldeuxièmecôtéquonatrigobottrouverangle.place_forget()
 
 entréedeuxièmecôtétrigobottrouverangle = tk.Entry(MathRobot, font=("Arial"))
@@ -1408,18 +1410,18 @@ txtcmdeuxièmecôtéquonatrigobottrouvercôté = tk.Label(MathRobot, text="cm", 
 txtcmdeuxièmecôtéquonatrigobottrouvercôté.place(x=955, y=149)
 txtcmdeuxièmecôtéquonatrigobottrouvercôté.place_forget()
 
-boutonvaliderdeuxièmecôtétrigobottrouverangle = tk.Button(MathRobot, text="Validate", command=validerentréedeuxièmecôtétrigobottrouvercôté, fg="black")
+boutonvaliderdeuxièmecôtétrigobottrouverangle = tk.Button(MathRobot, text="Valider", command=validerentréedeuxièmecôtétrigobottrouvercôté, fg="black")
 boutonvaliderdeuxièmecôtétrigobottrouverangle.place(x=770, y=185)
 boutonvaliderdeuxièmecôtétrigobottrouverangle.place_forget()
 
 anglequoncherchetrigobottrouverangle = tk.StringVar()
-anglequoncherchetrigobottrouverangle.set("Angle we are looking for : B")
+anglequoncherchetrigobottrouverangle.set("Angle qu'on cherche : B")
 
-menuanglequoncherchetrigobottrouverangle = tk.OptionMenu(MathRobot, anglequoncherchetrigobottrouverangle, "Angle we are looking for : A", "Angle we are looking for : B", "Angle we are looking for : C")
+menuanglequoncherchetrigobottrouverangle = tk.OptionMenu(MathRobot, anglequoncherchetrigobottrouverangle, "Angle qu'on cherche : A", "Angle qu'on cherche : B", "Angle qu'on cherche : C")
 menuanglequoncherchetrigobottrouverangle.place(x=400, y=225)
 menuanglequoncherchetrigobottrouverangle.place_forget()
 
-boutonvalideranglequoncherchetrigobottrouverangle = tk.Button(MathRobot, text="Validate", command=valideranglequoncherchetrigobottrouverangle, fg=("black"))
+boutonvalideranglequoncherchetrigobottrouverangle = tk.Button(MathRobot, text="Valider", command=valideranglequoncherchetrigobottrouverangle, fg=("black"))
 boutonvalideranglequoncherchetrigobottrouverangle.place(x=455, y=260)
 boutonvalideranglequoncherchetrigobottrouverangle.place_forget()
 
@@ -1427,7 +1429,7 @@ txtrésultattrigobottrouverangle = tk.Label(MathRobot, text="", font=("Arial", 2
 txtrésultattrigobottrouverangle.place(x=450, y=300)
 txtrésultattrigobottrouverangle.place_forget()
 
-boutonquitteraprèstrouvéangle = tk.Button(MathRobot, text="Return to the Trigobot menu", command=revenirmenutrigobottrouvéangle, fg="red")
+boutonquitteraprèstrouvéangle = tk.Button(MathRobot, text="Revenir au menu de Trigobot", command=revenirmenutrigobottrouvéangle, fg="red")
 boutonquitteraprèstrouvéangle.place(x=750, y=735)
 boutonquitteraprèstrouvéangle.place_forget()
 
