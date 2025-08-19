@@ -4,7 +4,6 @@ import tkinter as tk #importer l'éditeur d'interface
 from tkinter import messagebox #importer les messages d'alerte
 from tkinter import * #importer les menus déroulants
 import os
-import turtle #importer le stylo
 
 # -------------------- LE CODE --------------------
 
@@ -1436,3 +1435,4 @@ boutonquitteraprèstrouvéangle.place_forget()
 MathRobot.mainloop() 
 
 #END
+
