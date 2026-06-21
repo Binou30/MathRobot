@@ -131,7 +131,7 @@ def validerentréescôtéspythrobotrectangularité():
         txtsirectangleoupaspythrobotrectanglarité.place(x=350, y=250)
         txtsirectangleoupaspythrobotrectanglarité.update_idletasks()
     elif plusgrandcôtépythrobotrectangularité**2 != deuxautrescôtéspythrobotrectangularité[0]**2 + deuxautrescôtéspythrobotrectangularité[1]**2:
-        txtsirectangleoupaspythrobotrectanglarité.config(text="Le triangel ABC n'est pas rectangle")
+        txtsirectangleoupaspythrobotrectanglarité.config(text="Le triangle ABC n'est pas rectangle")
         txtsirectangleoupaspythrobotrectanglarité.place(x=350, y=250)
         txtsirectangleoupaspythrobotrectanglarité.update_idletasks()
     boutonquitterrectangularitépythrobot.place(x=750, y=735)
